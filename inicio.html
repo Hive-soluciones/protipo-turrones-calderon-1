@@ -1,0 +1,661 @@
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Turrones Calderón</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f18b1e",
+                        "primary-hover": "#d67610",
+                        "background-light": "#ffffff",
+                        "background-dark": "#121212",
+                        "surface-light": "#f8f9fa",
+                        "surface-dark": "#1e1e1e",
+                        "premium-brown": "#4f1f15",
+                        "soft-off-white": "#fdfbf7",
+                        "testimonial-dark": "#1a1a1a",
+                        "card-dark": "rgba(255, 255, 255, 0.03)",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+        }
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #f18b1e;
+            border-radius: 10px;
+        }
+        .star-rating {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary .expand-icon {
+            transform: rotate(180deg);
+        }.faq-slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .faq-slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .faq-slide {
+            min-width: 100%;
+            padding: 0 4px;}
+    </style>
+</head>
+<body class="font-sans antialiased bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<header class="relative w-full h-screen min-h-[600px] flex flex-col overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Turrón de Doña Pepa sobre mesa rústica de madera" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ"/>
+<img alt="Mesa de madera rustica" class="hidden w-full h-full object-cover object-center absolute inset-0 -z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjH_SZtGMD4izPlS43sATBPI-tcGD01V1RA0lJ9vons-IWpBJedIbmHmvEhVgzRG6C5-jLqclBADUMBNwWRRNFqzVIdIcXiAjKQ8muDYhZeUDZX_VTlHoiWHcT3x1RtTVR7VrdddIRc_Ali_1sbCn4StopIWMsEelZfstOQukoEHyseBuBFs-uRz2QV8u6I2EkyhFPPHFkK8tFjPZJPKPCynMfpZCoxJq-nLhNpuzRW9HiveYLW4vKf7QgDoGfF-2BohEV7dI2uBLJ"/>
+<img alt="Turrón de Doña Pepa with colorful sprinkles on a wooden table" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA29eGduQRh7-8ZLGFDBnZwPS2zV27mN78Blbpp1UCUmlDMwyB8d_RZn1xUfkB3SCmPmmqyajqbv48HHNxf4qIfE9ZA3SfjgQaGMTnMqDzHlr-Xaz5RiImupUFxT6JSTx-lr6lu8odFu42OGaYCIkQ5bUA958NwR4OBcXN4MRHrrRKhgxX7O8eMgmGHKJVmpoyGfMcZaz0NYAR26rwbfKCawoMYIA-ALPq3QkFTPewAKIIruHrDdc2_uS877sC-ANeOveTacB7EOFmQ"/>
+</div>
+<div class="absolute inset-0 z-10 hero-gradient"></div>
+<div class="absolute inset-0 z-10 bg-black/20 dark:bg-black/40 pointer-events-none mix-blend-multiply"></div>
+<nav class="relative z-50 w-full px-6 py-6 lg:px-12 flex justify-between items-center text-white">
+<div class="flex-shrink-0">
+<a class="text-2xl lg:text-3xl font-display font-bold tracking-wider hover:opacity-80 transition-opacity" href="#">
+                CALDERÓN
+            </a>
+</div>
+<div class="hidden md:flex space-x-8 lg:space-x-12 font-medium text-sm lg:text-base tracking-wide font-sans">
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Inicio</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Productos</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Para Empresas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#tiendas">Tiendas</a>
+</div>
+<div class="flex items-center space-x-6">
+<button aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none" id="theme-toggle">
+<span class="material-symbols-outlined text-white">dark_mode</span>
+</button>
+<a class="relative group p-2 hover:bg-white/10 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined text-2xl lg:text-3xl">shopping_cart</span>
+<span class="absolute top-1 right-0 h-4 w-4 bg-primary text-white text-[10px] font-bold flex items-center justify-center rounded-full group-hover:scale-110 transition-transform">2</span>
+</a>
+<button class="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<div class="relative z-40 flex-grow flex items-center px-6 lg:px-12">
+<div class="max-w-2xl text-white">
+<span class="inline-block py-1 px-3 mb-4 border border-white/30 rounded-full text-xs font-semibold tracking-wider uppercase bg-white/10 backdrop-blur-sm font-sans">
+                Edición Especial
+            </span>
+<h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                La Tradición que se <span class="text-primary italic">Deshace</span> en tu Boca
+            </h1>
+<p class="font-sans text-lg md:text-xl leading-relaxed text-gray-200 mb-10 max-w-lg drop-shadow-md font-normal">
+                Descubre el auténtico sabor del turrón artesanal Calderón, elaborado con la receta secreta que ha conquistado generaciones. Un festín de miel y suavidad te espera.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 font-sans">
+<button class="bg-primary hover:bg-primary-hover text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-primary/50 transform hover:-translate-y-1 transition-all duration-300 text-lg flex items-center justify-center gap-2 group">
+                    Haz tu pedido
+                    <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/30 font-bold py-4 px-8 rounded-full shadow-lg transform hover:-translate-y-1 transition-all duration-300 text-lg flex items-center justify-center gap-2">
+                    Ver Tiendas
+                    <span class="material-symbols-outlined text-lg">storefront</span>
+</button>
+</div>
+<div class="mt-12 flex items-center gap-4 text-sm text-gray-300 font-normal font-sans">
+<div class="flex -space-x-3">
+<img alt="Avatar cliente" class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzeNrerl3iZWl514FTGWn6xb4EV68jTvne2V7jISenUwoPVPMypcL21Y779QHJwaoYYTIpGOqF3YnUCxnMpQkptxK0obcuepG9Guti6t2KGajzf4ojuCgrOlQG4emNhYhW6dm1nKaWkie4AwFzWLSoWwgy6Uf6wa4J8LW0TxII2zy3pTAAOpSv97IL6q1_Buixm593_KoLpL5OJ1YGb-JFy_4xsoQBUpLbRynRNOY4S7YRYRQRc2VUyy9ydKvVJ3R-1PjBbGdhMsS-"/>
+<img alt="Avatar cliente" class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0SRwOJ3Qb85yiidDMxiWrsLhYpGPqN2sqZ7VItS7OPXbqpqXs4t6LDH8IxoSBeuWsd5TX9iH8yT3wunMmbtXyNOTRV_Y5hzd-_ZFyL-VT5H5hpGxiP9H4xMFxAb6NR3HZMLc-hGDw8w4bVK9F5SYBlnlI_b7Nhh7Jsp_F7qAA9C14p4Y4yaLsLbc4FsvENVf7A_gboa7s1RV4G-ia7LV5tIU6jt8qGU7QI_JNDAslYyVfAToQFkR5oLLxthd7QrqNSrE6pdHfA75V"/>
+<img alt="Avatar cliente" class="w-10 h-10 rounded-full border-2 border-gray-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7fZqXqnKdLLV0VuNcYiOaI0X_r2NYI404VWwTp-itGLMZALva6oJcZo6rrXGPszhFs7ep--b_Csv3LBMQFWAhbtu8xeBzx6xT3WtUMWqZ5PV1Pf6trWXwgeGfEB9pGqjJss00ySYXqxyQm07K_jhBib45_nMt0VRmz_aE3-2NxxoLRgMOdModlzpxq4jAk46CW7cq9OWsynkXvn88FPpjQ2i9vKu96F9Y6DvBLMLNq1fS5DOfNxanJufYZfjxnXnXvYFV3FeeQJs_"/>
+</div>
+<p>+5000 clientes felices este mes</p>
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 animate-bounce hidden md:block">
+<span class="material-symbols-outlined text-white text-3xl opacity-70">keyboard_arrow_down</span>
+</div>
+</header>
+<section class="py-24 px-6 lg:px-12 bg-white transition-colors duration-300">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-3 block font-sans">Exclusividad</span>
+<h2 class="font-display text-5xl md:text-6xl font-bold text-premium-brown mb-6">Joyas de Nuestra Tradición</h2>
+<p class="text-gray-500 font-normal text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
+                Cada pieza es una obra maestra culinaria, donde los ingredientes más selectos danzan en perfecta armonía para crear experiencias inolvidables.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full border border-gray-100">
+<div class="relative h-[400px] w-full overflow-hidden bg-gray-50 shadow-sm">
+<img alt="Turrón clásico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp_Q-IOYoD6LLKF3K_dy7KTKXzNLhNzn26aLRLlF4215c6xi4zArjdvLvsmaNu3BsrUHRgzFmVLK5wqOX1XDGKIG9ZyeWYJNOlFy8GTI1Bv8fiBHi3aWrn9Nd0h1KXtwS4XjCfhTzbz98JK9jbAk35StglIzIKNEddKUdw7y4Qgf3lusOI52WB17WrejLxhXI0KB1ZLEU0STn--N9sqSo9BbtvYX4CB8KwqytGWhTdOQZJgRG0lZO-eYavPNpmQV-n1KZADqri4lu-"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute top-6 right-6 z-10">
+<span class="bg-white/90 backdrop-blur text-premium-brown px-4 py-1.5 rounded-full text-xs font-bold tracking-wide shadow-sm border border-gray-100 font-sans">NUEVO</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex-grow">
+<div class="flex gap-0.5 mb-2">
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">Clásico de Miel</h3>
+<div class="mb-6">
+<p class="text-gray-500 text-sm font-sans font-normal">350g</p>
+<div class="flex items-center gap-1.5 text-gray-400 text-sm font-sans font-normal mt-5">
+<i class="far fa-check-circle text-[16px]"></i>
+<span>A partir de 5 unidades a S/.15.50</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-6">
+<span class="text-[30px] font-semibold text-primary font-sans tracking-tight">$24.90</span>
+<button class="bg-primary text-white font-sans font-bold px-6 py-2.5 rounded-lg hover:bg-primary-hover transition-colors duration-300 shadow-sm hover:shadow-md w-auto" title="Añadir al carrito">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full border border-gray-100">
+<div class="relative h-[400px] w-full overflow-hidden bg-gray-50 shadow-sm">
+<img alt="Turrón de Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKWfayhOy_61NfHCgzwclLKy6VXcAUnREzQczUW1AREq_rFwDBQYyscY0RpAbF1jxfDGC2v3OmhiCKZaIsijvRAo0c5-xIZV5NnI3x810qC0bLlgxTfXEum_wvG27lfOGUhyxAlUGeUmnY351v5E-OJLNcbWPjrp1klLxw-eKWQQoSaWGulCOTp_fe4t0KmZ4QhB0SYXcjAl1C1btdTJhXrmnAF9lql1tPT8JeO9tsgGdKxTMKFfd_5R8_NCnktn2xYxwtILESkjx"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex-grow">
+<div class="flex gap-0.5 mb-2">
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">Fusión de Cacao</h3>
+<div class="mb-6">
+<p class="text-gray-500 text-sm font-sans font-normal">450g</p>
+<div class="flex items-center gap-1.5 text-gray-400 text-sm font-sans font-normal mt-5">
+<i class="far fa-check-circle text-[16px]"></i>
+<span>Precio único</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-6">
+<span class="text-[30px] font-semibold text-primary font-sans tracking-tight">$28.50</span>
+<button class="bg-primary text-white font-sans font-bold px-6 py-2.5 rounded-lg hover:bg-primary-hover transition-colors duration-300 shadow-sm hover:shadow-md w-auto" title="Añadir al carrito">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full border border-gray-100">
+<div class="relative h-[400px] w-full overflow-hidden bg-gray-50 shadow-sm">
+<img alt="Galletas Artesanales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxP5-DHShPVKkmSEQl01m2LLMOCaVjspsT-EQhrlqHmD9NHjTPeFVIs8d2DkGefi5_llp1ubP_asdS8nLyO9hajTfBm9XJlrLBNobosks2eu4j6GGxmtD0GnObRlWB-7giovZzBeeib-rnWLPqIWk3wOy33_uKsFCZR5k9McVevTpqMAscjsyE9xu7Bu0YSb7IIM0bTmHr_WIQOwjoEZ-14wdGFglNitE2v0bhTOml0cyguBHmRGAJmglPc3TUryJvQYMI_fH5ZU"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex-grow">
+<div class="flex gap-0.5 mb-2">
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+<span class="material-symbols-outlined star-rating text-primary text-[14px]">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">Colección Imperial</h3>
+<div class="mb-6">
+<p class="text-gray-500 text-sm font-sans font-normal">500g</p>
+<div class="flex items-center gap-1.5 text-gray-400 text-sm font-sans font-normal mt-5">
+<i class="far fa-check-circle text-[16px]"></i>
+<span>Precio único</span>
+</div>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-gray-100 pt-6">
+<span class="text-[30px] font-semibold text-primary font-sans tracking-tight">$45.00</span>
+<button class="bg-primary text-white font-sans font-bold px-6 py-2.5 rounded-lg hover:bg-primary-hover transition-colors duration-300 shadow-sm hover:shadow-md w-auto" title="Añadir al carrito">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-soft-off-white dark:bg-surface-dark transition-colors duration-300">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+<div class="w-full lg:w-1/2 relative">
+<div class="aspect-[4/5] lg:aspect-square w-full rounded-lg overflow-hidden shadow-xl transform rotate-2 lg:rotate-2 border-4 border-white dark:border-gray-800">
+<img alt="Manos de maestro artesano preparando masa de turrón con almendras y miel" class="w-full h-full object-cover sepia-[0.3] hover:sepia-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8GNbN1Zdo2TABRKp18rFKeCWAGsRVSf5HLvmVLA5TidPyCOi9XBMJT8WIhcIXOB_a6GhEOUf8yqhg-gwmK-gPMyhrLuwO1uvPay--vxzpesv85SFhxJceTzKtl5lDNqaJhiV3vJL6sqqkjBb7JsRhPCkjJmoTmhPGKxHupiRV49E4By82pqM75oq7frrHW6tte4Ivb4ZgN-TLLyxO4pIxUc-ys8xiV9l7INDK_MpwBqiOrNIQTzf5CgK-6h6pZQzmnBQtc0CEoDlL"/>
+</div>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-premium-brown/10 rounded-full blur-3xl -z-10"></div>
+</div>
+<div class="w-full lg:w-1/2 text-center lg:text-left">
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-4 block font-sans">Nuestra Historia</span>
+<h2 class="font-display text-4xl lg:text-5xl font-bold text-premium-brown mb-8 leading-tight">Un Legado de Sabor que Perdura</h2>
+<p class="font-sans text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                    Desde hace más de un siglo, nuestra familia ha custodiado celosamente una receta que nació en el corazón de la cocina de la abuela. Cada barra de turrón que sale de nuestro taller lleva consigo la pasión por lo artesanal, el respeto por los ingredientes puros y el deseo inquebrantable de mantener viva una tradición que une generaciones alrededor de una mesa. No solo hacemos dulces; creamos recuerdos.
+                </p>
+<a class="inline-flex items-center justify-center px-8 py-3 border-2 border-premium-brown text-base font-bold rounded-full text-premium-brown hover:bg-premium-brown hover:text-white transition-all duration-300 group font-sans" href="#">
+                    Leer nuestra historia
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform text-lg">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-28 bg-white transition-colors duration-300 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-soft-off-white to-transparent opacity-50"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="text-center mb-16">
+<span class="inline-block py-1 px-3 mb-4 border border-premium-brown/20 rounded-full text-xs font-semibold tracking-wider uppercase bg-soft-off-white backdrop-blur-sm text-premium-brown/80 font-sans">
+                Comunidad
+            </span>
+<h2 class="font-display text-4xl md:text-5xl font-bold text-premium-brown mb-6">Voces de Nuestra Tradición</h2>
+<p class="text-gray-500 font-normal text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-sans">
+                Las experiencias de quienes han saboreado la auténtica esencia de Calderón.
+            </p>
+</div>
+<div class="flex justify-center items-center gap-4 mb-16 overflow-x-auto py-4 no-scrollbar">
+<div class="flex items-center -space-x-2 md:space-x-4">
+<img alt="User 1" class="w-12 h-12 rounded-full border-2 border-gray-100 shadow-md opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdDPYt7fumGHldYoEt3uo6fd3naMt5LqCIhRqQhhb-bi8vwoPnsA1EH6X99jXYVq3p8Di6QkEu47jfGEPSLtU4UV0aetxgXPKPleQt4hTEGxq3kq6D0jhgm4Zb9Z2_mjBhpOl7rUGGkxUvaqZVg8H-tjfs7adbnP3vRvV6MaFy3syfVGNoQtwItmSJU2BCZKqsjm7ymKMnW-90LQMOjALO5Cki2y9lTzBjmz4g0HC1Z-SaJlunBT9bWOVw48V3FDbwtB8djHRcFx0C"/>
+<img alt="User 2" class="w-14 h-14 rounded-full border-2 border-gray-100 shadow-md opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYxDPlb61YJOIXgIpyAtRUWIak8wSJ3ZSl-n_b7jdTUu43ySXQsRyfwRL3zOgMmQyANaiJQKB7UB9VOjmvOzSbN9MrEykhfo_NrWu8IEl41QYmtw4z1l0JfLrcenNmttkjlQJJL2b7fNW2EocUqwJUZFAvYrCZcG0AlMCZnyXOsQ9zCpgrsjphqRtyVxeZsuAB3H9E8-zZbqMmXdiwZ411G_HGydsVkppvjQCusx_0N0N7xVrXOkop3FzYsHGyYiMSObFLmtuxhfT3"/>
+<div class="relative">
+<div class="absolute inset-0 rounded-full border-2 border-primary animate-pulse"></div>
+<img alt="User 3 - Active" class="w-20 h-20 rounded-full border-4 border-white shadow-xl shadow-primary/20 z-10 relative object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_TVHgK9BCc68lei2vzzOFrfOuH-y6KiIqW27n8bGO814_Uc7l4viMlYuPbkq4wOo9xNajJaQyLDjP4nl6Eut820CW7EV5l2N_ZasHz1k-SjI11TlVS1bITCIdTtaQYeIjzTt9HhSUhNM-xL0f3SX7ESXz5yLRxxj342kfsIuuMpHVqKWIgUnGNR99BCy4k4IEib6zy5eTXCHBLqjAWgYgiSFzvPEhQASVlbQf7V4b-G6PRzhah-i1gWXgUBKrdwsuacNAdil8bWfM"/>
+</div>
+<img alt="User 4" class="w-14 h-14 rounded-full border-2 border-gray-100 shadow-md opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlv4dQRjO9L9tgL5YgJauRNqIYUpgpPe-zMFN44zt9sf3jaZqq2_mS6dwDa9OJJjf3pBzh6OvHw1nuMWOmpJZUtSuTxGl71OOTEtVT0Vt33ELzURHWPCNnoS8vM3s5TX8cXKza9cBOEvPl0sGgCs3Ay7r9Q00SyHypW11ik9AZT-S_YKWog9gr8tae5lojFMpImFIL6xWgqZ6X24wqw38a_9r7TaU6kw9bXRIzHJfp_MV4dJongsHZ8oKIFcB-YDGJJz5soqfE5B4Z"/>
+<img alt="User 5" class="w-12 h-12 rounded-full border-2 border-gray-100 shadow-md opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQUbE_P1W3g1B59hwhrhHvvel0BNK5Txj0nsOZAibF9IgwI48uULUDsMysT70EU8EcrSW0FEe0fLO8c6VPafQQzGBDe8eYLuvEy73sD9IvW7UCbCY9iboomUkJVIGVmmya0Bw5b4NjS-KvehxOeLfsNZpF5H124y7nfkh73VuyhZRB1NGbOyY2YcCd-w34ctseHaW5mWnLbpD9j5Ja17OETnxcLptWo0EAP_w9qjzXx4S4uwkzK88S2czueDt6Js4BDlVYYYllLyDY"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative font-sans">
+<div class="hidden md:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+<div class="hidden md:block absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+<div class="hidden md:block bg-soft-off-white rounded-2xl p-8 opacity-60 scale-90 transform origin-right transition-all shadow-md border border-gray-100/50">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Carlos M." class="w-12 h-12 rounded-full object-cover border border-gray-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5NNk_P06gQ17yIChvBlIzC6GFGAwAURcscZxKOAGwYgX-cNwBPRtY4aIBGpPlA-cOAGLJ-Eb8fJWaYrBSi_SMGSWYWwU7DBNzpyMflZhQxTwdL2ij_zwXNyPfKKJcDL0TcUFsFbWN5fvJtuUXZfC98HYYsCcpNh0JQo1QWfa12gvMtFaHBECz9AHKp3mviBC8b2_-81-iztS5hGoDTF0zvIAHGTvBAqElQ5Hvihj7uc7yq6Ac7xSQWaYyyey5a-L6JLVBiEAUizJ8"/>
+<div>
+<h4 class="font-bold text-premium-brown">Carlos M.</h4>
+<p class="text-xs text-gray-400">Chef Pastelero</p>
+</div>
+</div>
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="ml-2 text-xs text-gray-400 font-bold">5.0</span>
+</div>
+<p class="text-gray-600 text-sm leading-relaxed italic font-normal">
+                    "La textura es simplemente inigualable. Se nota la calidad de la miel en cada bocado. Es volver a mi infancia."
+                </p>
+</div>
+<div class="bg-soft-off-white rounded-2xl p-8 md:p-10 shadow-xl shadow-gray-100 relative transform md:scale-105 z-20 transition-all border border-gray-100">
+<div class="absolute -top-3 -right-3">
+<span class="material-symbols-outlined text-6xl text-premium-brown/5 rotate-180">format_quote</span>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<img alt="Sofia R." class="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20 ring-offset-2 ring-offset-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK8-DZzzSAsJs1d6wx-S4gAi8L36ZF6_6hlBpTt8lumEpvLfBUTMCiYmuj4FGalU_d6qU1v0aNv7pNAK_vDSv3d2m1EOSLeWxe3bMWrC7EvsJpgJeh654nV_LHLmMbqlwRoqRZPoucv3GVMnTLxhI8JGRHFMlv3Mo6PQ2S8e5CSiJF3ViARuyGYNvzmUHP330d46fBXnP9OSxiQBAjNu56ynt3OQpiTPEo70GiZHi4F10HIsvj-Cccw2bHzWJYJWWkJVQQOz7y0Bth"/>
+<div>
+<h4 class="font-bold text-lg text-premium-brown">Sofia R.</h4>
+<p class="text-sm text-primary font-medium">Crítica Gastronómica</p>
+</div>
+</div>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined star-rating">star</span>
+<span class="material-symbols-outlined star-rating">star</span>
+<span class="material-symbols-outlined star-rating">star</span>
+<span class="material-symbols-outlined star-rating">star</span>
+<span class="material-symbols-outlined star-rating">star</span>
+<span class="ml-3 text-sm text-gray-400 font-bold self-center">5.0</span>
+</div>
+<p class="text-gray-600 text-sm font-normal leading-relaxed mb-6">
+                    "Este turrón redefine lo artesanal. La fusión de cacao es una revelación para el paladar, logrando un equilibrio perfecto entre lo tradicional y lo moderno. Simplemente exquisito."
+                </p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-white rounded text-[10px] text-gray-500 border border-gray-200 font-semibold shadow-sm">Sabor Auténtico</span>
+<span class="px-2 py-1 bg-white rounded text-[10px] text-gray-500 border border-gray-200 font-semibold shadow-sm">Envío Rápido</span>
+</div>
+</div>
+<div class="hidden md:block bg-soft-off-white rounded-2xl p-8 opacity-60 scale-90 transform origin-left transition-all shadow-md border border-gray-100/50">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Miguel A." class="w-12 h-12 rounded-full object-cover border border-gray-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDneHLT0fJdfkl_O-lFDT_boC2bxySED1_zT6VtpGOYlOJawM63ITNhVOaBAssJ00E7maCRHCXNdmR2_ZDvskurxxq0x1qRFvxl-dAPkfo78dPLYm3uLaWD-ZfAEGMZwZUDYVp9ocsBWpQaqFbsKFQRm7KDEWULIq0lFxWXAlyxjQLIBV8NK5JAWBAau1yy3KHtRyi7bIpNB5lvAVoXJ2aBozHvcpqhMvssZQWCr5sstUi8J-K2SpAq3_NjkW7zte4YMb8dIZqHmGm"/>
+<div>
+<h4 class="font-bold text-premium-brown">Miguel A.</h4>
+<p class="text-xs text-gray-400">Cliente Frecuente</p>
+</div>
+</div>
+<div class="flex text-primary mb-4">
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="material-symbols-outlined text-sm star-rating">star</span>
+<span class="ml-2 text-xs text-gray-400 font-bold">5.0</span>
+</div>
+<p class="text-gray-600 text-sm leading-relaxed italic font-normal">
+                    "Compro todos los años para Navidad y nunca decepcionan. La presentación es impecable, perfecta para regalar."
+                </p>
+</div>
+</div>
+<div class="flex justify-center items-center gap-4 mt-12">
+<button class="w-10 h-10 rounded-lg bg-soft-off-white shadow-sm hover:bg-gray-100 border border-gray-200 flex items-center justify-center transition-colors group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-premium-brown">arrow_back</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-soft-off-white shadow-sm hover:bg-gray-100 border border-gray-200 flex items-center justify-center transition-colors group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-premium-brown">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<section class="py-24 bg-soft-off-white dark:bg-surface-dark transition-colors duration-300">
+<div class="max-w-5xl mx-auto px-6 lg:px-12 relative">
+<div class="text-center mb-16">
+<span class="inline-block py-1 px-3 mb-4 border border-premium-brown/20 rounded-full text-xs font-semibold tracking-wider uppercase bg-white/50 backdrop-blur-sm text-premium-brown/80 font-sans">
+                Información
+            </span>
+<h2 class="font-display text-4xl md:text-5xl font-bold text-premium-brown mb-6">Dudas que se Endulzan</h2>
+<p class="text-gray-500 font-normal text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-sans">
+                Todo lo que necesitas saber sobre nuestro proceso y envíos.
+            </p>
+</div>
+<div class="relative px-12">
+<button class="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-premium-brown hover:bg-premium-brown hover:text-white transition-all z-10 focus:outline-none" id="prevFaq">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="faq-slider-container overflow-hidden">
+<div class="faq-slider-wrapper flex transition-transform duration-500" id="faqSlider">
+<div class="faq-slide min-w-full px-1">
+<div class="space-y-4 font-sans">
+<details class="group bg-white rounded-lg border border-gray-100 shadow-sm open:border-primary/20 transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-lg text-premium-brown hover:text-primary transition-colors">
+<span>¿Cómo se conservan los turrones?</span>
+<span class="expand-icon material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 leading-relaxed font-normal">
+                                        Recomendamos conservar los turrones en un lugar fresco y seco, lejos de la luz solar directa. No es necesario refrigerarlos, pero si vives en una zona muy calurosa, puedes mantenerlos en la parte menos fría de tu refrigerador.
+                                    </div>
+</details>
+<details class="group bg-white rounded-lg border border-gray-100 shadow-sm open:border-primary/20 transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-lg text-premium-brown hover:text-primary transition-colors">
+<span>¿Hacen envíos a todo el Perú?</span>
+<span class="expand-icon material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 leading-relaxed font-normal">
+                                        Sí, realizamos envíos a nivel nacional. Los tiempos de entrega varían según la ubicación: 1-2 días hábiles para Lima y Callao, y 3-5 días hábiles para provincias. Todos los envíos cuentan con un embalaje especial para proteger el producto.
+                                    </div>
+</details>
+<details class="group bg-white rounded-lg border border-gray-100 shadow-sm open:border-primary/20 transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-lg text-premium-brown hover:text-primary transition-colors">
+<span>¿Tienen opciones sin azúcar?</span>
+<span class="expand-icon material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 leading-relaxed font-normal">
+                                        Actualmente contamos con una línea especial baja en azúcar endulzada con stevia, disponible en nuestra colección "Salud y Tradición". Sin embargo, nuestra receta clásica mantiene la miel de frutas tradicional que nos caracteriza.
+                                    </div>
+</details>
+<details class="group bg-white rounded-lg border border-gray-100 shadow-sm open:border-primary/20 transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-lg text-premium-brown hover:text-primary transition-colors">
+<span>¿Ofrecen descuentos por mayor?</span>
+<span class="expand-icon material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 leading-relaxed font-normal">
+                                        ¡Por supuesto! Tenemos precios especiales para pedidos corporativos y compras al por mayor a partir de 12 unidades. Puedes contactar a nuestro equipo de ventas a través de la sección "Para Empresas" para obtener una cotización personalizada.
+                                    </div>
+</details>
+<details class="group bg-white rounded-lg border border-gray-100 shadow-sm open:border-primary/20 transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-lg text-premium-brown hover:text-primary transition-colors">
+<span>¿Cuál es el tiempo de vida del producto?</span>
+<span class="expand-icon material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 leading-relaxed font-normal">
+                                        Nuestros turrones, al ser artesanales y sin conservantes artificiales fuertes, tienen una vida útil óptima de 45 días desde su elaboración si se mantienen sellados y en condiciones adecuadas de almacenamiento.
+                                    </div>
+</details>
+</div>
+</div>
+<div class="faq-slide min-w-full px-1">
+<div class="space-y-4 font-sans">
+<details class="group bg-white rounded-lg border border-gray-100 shadow-sm open:border-primary/20 transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-lg text-premium-brown hover:text-primary transition-colors">
+<span>¿Puedo personalizar el empaque para regalo?</span>
+<span class="expand-icon material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 leading-relaxed font-normal">
+                                        Sí, contamos con opciones de empaques de regalo premium que incluyen cintas personalizadas y tarjetas con mensajes dedicatorios. Esta opción está disponible al finalizar tu compra por un costo adicional mínimo.
+                                    </div>
+</details>
+<details class="group bg-white rounded-lg border border-gray-100 shadow-sm open:border-primary/20 transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-lg text-premium-brown hover:text-primary transition-colors">
+<span>¿Qué métodos de pago aceptan?</span>
+<span class="expand-icon material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 leading-relaxed font-normal">
+                                        Aceptamos todas las tarjetas de crédito y débito (Visa, Mastercard, Amex), transferencias bancarias, Yape, Plin y pago contra entrega en efectivo para distritos seleccionados de Lima Metropolitana.
+                                    </div>
+</details>
+<details class="group bg-white rounded-lg border border-gray-100 shadow-sm open:border-primary/20 transition-all duration-300">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-medium text-lg text-premium-brown hover:text-primary transition-colors">
+<span>¿Tienen tiendas físicas donde probarlos?</span>
+<span class="expand-icon material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-gray-600 leading-relaxed font-normal">
+                                        Sí, te invitamos a visitar cualquiera de nuestras tiendas. En todas ellas ofrecemos degustaciones gratuitas de nuestros productos estrella para que puedas elegir tu favorito con total seguridad.
+                                    </div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-premium-brown hover:bg-premium-brown hover:text-white transition-all z-10 focus:outline-none" id="nextFaq">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="flex justify-center mt-8 gap-2" id="faqPagination">
+<button class="w-3 h-3 rounded-full bg-premium-brown transition-colors focus:outline-none" onclick="goToSlide(0)"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 hover:bg-premium-brown/50 transition-colors focus:outline-none" onclick="goToSlide(1)"></button>
+</div>
+</div>
+</div>
+</section>
+<section class="relative w-full h-[600px] flex items-center justify-center overflow-hidden" id="brand-passion">
+<div class="absolute inset-0 z-0">
+<img alt="Atmospheric shot of traditional turron ingredients" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjH_SZtGMD4izPlS43sATBPI-tcGD01V1RA0lJ9vons-IWpBJedIbmHmvEhVgzRG6C5-jLqclBADUMBNwWRRNFqzVIdIcXiAjKQ8muDYhZeUDZX_VTlHoiWHcT3x1RtTVR7VrdddIRc_Ali_1sbCn4StopIWMsEelZfstOQukoEHyseBuBFs-uRz2QV8u6I2EkyhFPPHFkK8tFjPZJPKPCynMfpZCoxJq-nLhNpuzRW9HiveYLW4vKf7QgDoGfF-2BohEV7dI2uBLJ"/>
+<div class="absolute inset-0 bg-black/60 z-10"></div>
+</div>
+<div class="relative z-20 text-center px-6 max-w-4xl mx-auto">
+<h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
+            Nuestra Pasión en Cada Detalle
+        </h2>
+<div class="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
+<p class="font-sans text-lg md:text-2xl text-gray-200 leading-relaxed font-light mb-10">
+            Cada ingrediente cuenta una historia, cada mezcla es un ritual. En Turrones Calderón, no solo seguimos una receta; honramos un legado de calidad y dedicación que se siente en cada bocado. La excelencia es nuestro único estándar.
+        </p>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-primary/50 transform hover:-translate-y-1 transition-all duration-300 text-lg">
+            Conoce Más
+        </button>
+</div>
+</section>
+<footer class="bg-premium-brown text-white pt-20 pb-10 font-sans">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+<div class="space-y-6">
+<a class="text-3xl font-display font-bold tracking-wider inline-block" href="#">CALDERÓN</a>
+<p class="text-white text-sm leading-relaxed font-normal opacity-90">
+                    Preservando el arte del turrón tradicional peruano con los mejores ingredientes y el amor de nuestra familia desde hace generaciones.
+                </p>
+<div class="flex items-center gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+</a>
+</div>
+</div>
+<div class="lg:pl-8">
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Enlaces Rápidos</h4>
+<ul class="space-y-4">
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Inicio</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Productos</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Para Empresas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#tiendas">Tiendas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Atención al Cliente</h4>
+<ul class="space-y-4">
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Preguntas Frecuentes</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Envíos y Devoluciones</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Libro de Reclamaciones</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Contacto</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<p class="text-white text-sm font-normal opacity-90">Av. Abancay 350, Cercado de Lima, Perú</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+<a class="text-white hover:text-primary text-sm font-normal opacity-90" href="mailto:hola@turronescalderon.com">hola@turronescalderon.com</a>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">call</span>
+<a class="text-white hover:text-primary text-sm font-normal opacity-90" href="tel:+5114278901">(01) 427-8901</a>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-gray-300 text-xs font-normal tracking-widest uppercase">
+                © 2023 Turrones Calderón. Todos los derechos reservados.
+            </p>
+<div class="flex items-center gap-6 grayscale opacity-40">
+<img alt="Visa" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjn7ALwjply3d1gRRze-sQQMoESL-6RPSzNu2RMuwVGaKqMCiips_KiFtdsU-st78rDIepxZ-iaFV-tEvnBSMuKcnctZf4W4Q2WcY9UxWJrrjDVh4hAw8J9o2l8DfcQMJoHOh_bsP6GmEgrLCOKW3jZjerFL2NifK23sZdHIS15fji5JemvzlNR-G63C9axJX2dNc7M9yAsFNO2C9NNEFuSTz612S6g1IfRlILpKHdrAqsGQ4iOqKT-2hz7Z0_1_ICztFZUu0bDm33"/>
+<img alt="Mastercard" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSVShAmDcY-Bcg3GMh4mfbnZoiIqAC9oNeUxm3OvykF6nUaf7n-JxoPZfY4n0A20UaXFhtRxP-GNh8HdXkbv8Y61o6YhKeCCOVCKhpsqCJFVmSpyyROE_QwdtkIb9gQug0ruqpuVg38q65zLPtnSQMSa8hUa0s4HnS0MaD_l0UZz0irq9KOTl9Rf8N5iiRDQmSVEnrN9xNM9TzBM_WdJH8vpkXansRtLe2KssYHRrAd814NYq-LHF1kvhBuar82H3DyPZQ3G7jL55y"/>
+<img alt="American Express" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwijIvFzHHiMmkoZ228vVMVKv1TFpifhKbURNnk_4b_lAaXklpBvT2OQrYW3IIY2Jo-iWw3bq65R16owwrcAgoOGeu2cu9TY2cmF1edu_cR3XoGr7ObiZxNXVjwd8O4tLjVoYvMsl0rMeMiAdMDJxxWDVpIg6GFmcdNZ3qWgXi8ASqT01pvhX0CeOcOqlUWgTUdnnVd7m4Wy97oFhucxXwMIAuSsYa7mqcc6jvD6w8AWieK5wasy_RP58w7SzgvTV5XvjE7YkfuYkb"/>
+<img alt="PayPal" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEpcmvb1BThGUQD55Jo8320qJk0ht97uZXyT2WAZnC5QFr8cRLaXThA_uueTMfSG6SlgcmA2kkzacJ4axpn8Cv9tRBPrxBsotap6yWryFGK7pld-TjQy74BFFPurOzxZEQ5vLeP6225yE6E4ompGf3CPBEhTrUjsd6E9C2gF77upw3CbwtfZa3RejswGdjSwBohBHcXk61HPUJ_jVoU5KVDwTNSpuOlocw9AFQbXFsarbR1VkQ04sS-rNK3zZ8fK9TV2f_DZ07A4K"/>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('span');
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        themeIcon.textContent = 'light_mode';
+    } else {
+        document.documentElement.classList.remove('dark');
+        themeIcon.textContent = 'dark_mode';
+    }
+    themeToggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.theme = 'dark';
+            themeIcon.textContent = 'light_mode';
+        } else {
+            localStorage.theme = 'light';
+            themeIcon.textContent = 'dark_mode';
+        }
+    });
+    // Slider Logic
+    const faqSlider = document.getElementById('faqSlider');
+    const prevBtn = document.getElementById('prevFaq');
+    const nextBtn = document.getElementById('nextFaq');
+    const paginationDots = document.getElementById('faqPagination').children;
+    let currentSlide = 0;
+    const totalSlides = 2;
+    function updateSlider() {
+        faqSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        // Update dots
+        Array.from(paginationDots).forEach((dot, index) => {
+            if (index === currentSlide) {
+                dot.classList.remove('bg-gray-300', 'hover:bg-premium-brown/50');
+                dot.classList.add('bg-premium-brown');
+            } else {
+                dot.classList.add('bg-gray-300', 'hover:bg-premium-brown/50');
+                dot.classList.remove('bg-premium-brown');
+            }
+        });
+        // Optional: Disable arrows at limits
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === totalSlides - 1;
+        // Visual feedback for disabled state
+        prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+        prevBtn.style.cursor = currentSlide === 0 ? 'not-allowed' : 'pointer';
+        nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+        nextBtn.style.cursor = currentSlide === totalSlides - 1 ? 'not-allowed' : 'pointer';
+    }
+    // Initialize state
+    updateSlider();
+    nextBtn.addEventListener('click', () => {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSlider();
+        }
+    });
+    prevBtn.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlider();
+        }
+    });
+    window.goToSlide = function(slideIndex) {
+        currentSlide = slideIndex;
+        updateSlider();
+    }
+</script>
+</body></html>

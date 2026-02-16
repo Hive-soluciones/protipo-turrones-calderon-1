@@ -1,0 +1,818 @@
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catálogo de Productos - Turrones Calderón</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f18b1e",
+                        "primary-hover": "#d67610",
+                        "background-light": "#ffffff",
+                        "background-dark": "#121212",
+                        "surface-light": "#f8f9fa",
+                        "surface-dark": "#1e1e1e",
+                        "premium-brown": "#4f1f15",
+                        "soft-off-white": "#fdfbf7",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 280px);
+            gap: 1.5rem;
+        }
+        .bento-item-1 { grid-column: span 2; grid-row: span 2; }
+        .bento-item-2 { grid-column: span 2; grid-row: span 1; }
+        .bento-item-3 { grid-column: span 1; grid-row: span 1; }
+        .bento-item-4 { grid-column: span 1; grid-row: span 1; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }.cart-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .cart-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .cart-drawer {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .cart-overlay.open .cart-drawer {
+            transform: translateX(0);
+        }
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            .bento-item-1, .bento-item-2, .bento-item-3, .bento-item-4 {
+                grid-column: span 2;
+                grid-row: auto;
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-300 relative">
+<div class="cart-overlay fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm open flex justify-end" id="cart-drawer-overlay">
+<div class="cart-drawer w-full max-w-md h-full bg-white dark:bg-surface-dark shadow-2xl flex flex-col font-sans">
+<div class="p-6 flex items-center justify-between border-b border-gray-100 dark:border-gray-800">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Tu Carrito</h2>
+<button class="text-gray-400 hover:text-primary transition-colors focus:outline-none" id="close-cart">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<div class="flex gap-4">
+<div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
+<img alt="Clásico de Miel" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<h3 class="font-semibold text-gray-900 dark:text-white text-base">Clásico de Miel</h3>
+<button class="text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">500g</p>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center border border-gray-200 dark:border-gray-700 rounded-md">
+<button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">-</button>
+<span class="w-8 text-center text-sm font-medium">1</span>
+<button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">+</button>
+</div>
+<span class="font-bold text-gray-900 dark:text-white">$24.90</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
+<img alt="Fusión de Cacao" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKWfayhOy_61NfHCgzwclLKy6VXcAUnREzQczUW1AREq_rFwDBQYyscY0RpAbF1jxfDGC2v3OmhiCKZaIsijvRAo0c5-xIZV5NnI3x810qC0bLlgxTfXEum_wvG27lfOGUhyxAlUGeUmnY351v5E-OJLNcbWPjrp1klLxw-eKWQQoSaWGulCOTp_fe4t0KmZ4QhB0SYXcjAl1C1btdTJhXrmnAF9lql1tPT8JeO9tsgGdKxTMKFfd_5R8_NCnktn2xYxwtILESkjx"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<h3 class="font-semibold text-gray-900 dark:text-white text-base">Fusión de Cacao</h3>
+<button class="text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">400g</p>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center border border-gray-200 dark:border-gray-700 rounded-md">
+<button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">-</button>
+<span class="w-8 text-center text-sm font-medium">2</span>
+<button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">+</button>
+</div>
+<span class="font-bold text-gray-900 dark:text-white">$57.00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-gray-50 dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800">
+<div class="space-y-3 mb-6">
+<div class="flex justify-between text-gray-600 dark:text-gray-400 text-sm">
+<span>Subtotal</span>
+<span>$81.90</span>
+</div>
+<div class="flex justify-between text-gray-600 dark:text-gray-400 text-sm">
+<span>Envío</span>
+<span>$5.00</span>
+</div>
+<div class="flex justify-between items-center pt-3 border-t border-gray-200 dark:border-gray-700">
+<span class="font-bold text-gray-900 dark:text-white text-lg">Total a pagar</span>
+<span class="font-bold text-primary text-xl">$86.90</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30 transition-all active:scale-[0.98]">
+                    Pagar Ahora
+                </button>
+<p class="text-center text-xs text-gray-400 mt-4">Impuestos incluidos. Envío calculado al finalizar la compra.</p>
+</div>
+</div>
+</div>
+<nav class="absolute top-0 left-0 w-full z-50 px-6 py-6 lg:px-12 flex justify-between items-center text-white">
+<div class="flex-shrink-0">
+<a class="text-2xl lg:text-3xl font-display font-bold tracking-wider hover:opacity-80 transition-opacity" href="#">
+            CALDERÓN
+        </a>
+</div>
+<div class="hidden md:flex space-x-8 lg:space-x-12 font-medium text-sm lg:text-base tracking-wide font-sans">
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Inicio</a>
+<a class="text-primary border-b-2 border-primary pb-1" href="#">Productos</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Para Empresas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Tiendas</a>
+</div>
+<div class="flex items-center space-x-6">
+<button aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none" id="theme-toggle">
+<span class="material-symbols-outlined text-white">dark_mode</span>
+</button>
+<a class="relative group p-2 hover:bg-white/10 rounded-full transition-all cursor-pointer" id="cart-toggle">
+<span class="material-symbols-outlined text-2xl lg:text-3xl">shopping_cart</span>
+<span class="absolute top-1 right-0 h-4 w-4 bg-primary text-white text-[10px] font-bold flex items-center justify-center rounded-full group-hover:scale-110 transition-transform">2</span>
+</a>
+</div>
+</nav>
+<section class="relative h-[60vh] flex items-center justify-center text-center px-6">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Artisan Turrones" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA29eGduQRh7-8ZLGFDBnZwPS2zV27mN78Blbpp1UCUmlDMwyB8d_RZn1xUfkB3SCmPmmqyajqbv48HHNxf4qIfE9ZA3SfjgQaGMTnMqDzHlr-Xaz5RiImupUFxT6JSTx-lr6lu8odFu42OGaYCIkQ5bUA958NwR4OBcXN4MRHrrRKhgxX7O8eMgmGHKJVmpoyGfMcZaz0NYAR26rwbfKCawoMYIA-ALPq3QkFTPewAKIIruHrDdc2_uS877sC-ANeOveTacB7EOFmQ"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 max-w-4xl text-white">
+<h1 class="font-display text-5xl md:text-7xl font-bold mb-6">Nuestra Dulce Selección</h1>
+<p class="font-sans text-lg md:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed">
+            Explora un universo de texturas y sabores ancestrales, donde cada bocado cuenta una historia de tradición y maestría artesanal.
+        </p>
+</div>
+</section>
+<section class="py-20 px-6 lg:px-12 bg-soft-off-white dark:bg-surface-dark transition-colors duration-300 overflow-hidden">
+<div class="max-w-7xl mx-auto relative">
+<div class="mb-12 flex justify-between items-end">
+<div>
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-2 block">Exclusividades Temporales</span>
+<h2 class="font-display text-4xl lg:text-5xl font-bold text-premium-brown dark:text-gray-100">Ofertas del Mes</h2>
+</div>
+<div class="hidden md:flex items-center gap-4 mb-1">
+<button class="w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="relative group">
+<div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-8">
+<div class="min-w-full snap-start">
+<div class="bento-grid">
+<div class="bento-item-1 relative group/item overflow-hidden rounded-3xl shadow-xl">
+<img alt="Promo 1" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ"/>
+<div class="absolute inset-x-6 bottom-6 glass-card p-8 rounded-2xl flex flex-col justify-end text-white border border-white/20">
+<h3 class="text-3xl lg:text-4xl font-display font-bold mb-3">Pack Familiar Tradicional</h3>
+<p class="text-white/90 mb-6 font-sans text-lg">Lleva 3 turrones clásicos de 500g con un 15% de descuento exclusivo esta temporada.</p>
+<button class="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-xl font-bold w-fit transition-all flex items-center gap-3 shadow-lg hover:shadow-primary/40">
+                                    Ver Oferta <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="bento-item-2 relative group/item overflow-hidden rounded-3xl shadow-xl">
+<img alt="Promo 2" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKWfayhOy_61NfHCgzwclLKy6VXcAUnREzQczUW1AREq_rFwDBQYyscY0RpAbF1jxfDGC2v3OmhiCKZaIsijvRAo0c5-xIZV5NnI3x810qC0bLlgxTfXEum_wvG27lfOGUhyxAlUGeUmnY351v5E-OJLNcbWPjrp1klLxw-eKWQQoSaWGulCOTp_fe4t0KmZ4QhB0SYXcjAl1C1btdTJhXrmnAF9lql1tPT8JeO9tsgGdKxTMKFfd_5R8_NCnktn2xYxwtILESkjx"/>
+<div class="absolute inset-0 flex items-center justify-center p-6">
+<div class="glass-card p-8 rounded-2xl text-center text-white w-full max-w-md border border-white/20">
+<h3 class="text-2xl lg:text-3xl font-display font-bold mb-2">Especial de Cacao</h3>
+<p class="text-white/90 mb-5 font-sans italic text-base">Sabor intenso y textura premium, precio irresistible.</p>
+<button class="bg-white text-premium-brown hover:bg-primary hover:text-white px-8 py-2.5 rounded-xl font-bold mx-auto transition-all text-sm uppercase tracking-wider">Ver Oferta</button>
+</div>
+</div>
+</div>
+<div class="bento-item-3 relative group/item overflow-hidden rounded-3xl shadow-xl">
+<img alt="Promo 3" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxP5-DHShPVKkmSEQl01m2LLMOCaVjspsT-EQhrlqHmD9NHjTPeFVIs8d2DkGefi5_llp1ubP_asdS8nLyO9hajTfBm9XJlrLBNobosks2eu4j6GGxmtD0GnObRlWB-7giovZzBeeib-rnWLPqIWk3wOy33_uKsFCZR5k9McVevTpqMAscjsyE9xu7Bu0YSb7IIM0bTmHr_WIQOwjoEZ-14wdGFglNitE2v0bhTOml0cyguBHmRGAJmglPc3TUryJvQYMI_fH5ZU"/>
+<div class="absolute inset-x-4 bottom-4 glass-card p-5 rounded-xl text-white text-center border border-white/20">
+<h3 class="font-display text-xl font-bold">Exportación</h3>
+<button class="mt-2 text-primary hover:text-white font-bold text-sm tracking-tight transition-colors">DESCUBRIR <span class="material-symbols-outlined text-[10px] align-middle">east</span></button>
+</div>
+</div>
+<div class="bento-item-4 relative group/item overflow-hidden rounded-3xl shadow-xl">
+<img alt="Promo 4" class="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8GNbN1Zdo2TABRKp18rFKeCWAGsRVSf5HLvmVLA5TidPyCOi9XBMJT8WIhcIXOB_a6GhEOUf8yqhg-gwmK-gPMyhrLuwO1uvPay--vxzpesv85SFhxJceTzKtl5lDNqaJhiV3vJL6sqqkjBb7JsRhPCkjJmoTmhPGKxHupiRV49E4By82pqM75oq7frrHW6tte4Ivb4ZgN-TLLyxO4pIxUc-ys8xiV9l7INDK_MpwBqiOrNIQTzf5CgK-6h6pZQzmnBQtc0CEoDlL"/>
+<div class="absolute inset-x-4 bottom-4 glass-card p-5 rounded-xl text-white text-center border border-white/20">
+<h3 class="font-display text-xl font-bold">Miel Pura</h3>
+<button class="mt-2 text-primary hover:text-white font-bold text-sm tracking-tight transition-colors">DESCUBRIR <span class="material-symbols-outlined text-[10px] align-middle">east</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center items-center gap-3 mt-12">
+<button class="w-3 h-3 rounded-full bg-primary"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700 hover:bg-primary/50 transition-colors"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-700 hover:bg-primary/50 transition-colors"></button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 px-6 lg:px-12 bg-white dark:bg-background-dark">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-6">
+<div class="relative flex-grow flex items-center overflow-hidden">
+<div class="flex items-center space-x-3 overflow-x-auto no-scrollbar pb-2 pr-12 scroll-smooth" id="category-container">
+<button class="bg-primary text-white px-6 py-2 rounded-full whitespace-nowrap text-sm font-semibold shadow-sm">Clásicos</button>
+<button class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-6 py-2 rounded-full whitespace-nowrap text-sm font-semibold hover:bg-gray-200 transition-colors">Especiales</button>
+<button class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-6 py-2 rounded-full whitespace-nowrap text-sm font-semibold hover:bg-gray-200 transition-colors">Lotes de Regalo</button>
+<button class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-6 py-2 rounded-full whitespace-nowrap text-sm font-semibold hover:bg-gray-200 transition-colors">Exportación</button>
+<button class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-6 py-2 rounded-full whitespace-nowrap text-sm font-semibold hover:bg-gray-200 transition-colors">Miel Pura</button>
+</div>
+<button class="absolute right-0 top-0 bottom-2 bg-gradient-to-l from-white dark:from-background-dark via-white dark:via-background-dark to-transparent pl-8 flex items-center">
+<span class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors cursor-pointer">chevron_right</span>
+</button>
+</div>
+<div class="relative min-w-[300px]">
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:ring-primary focus:border-primary" placeholder="Buscar productos..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+</div>
+</div>
+<div class="mb-8">
+<p class="font-sans text-gray-500 dark:text-gray-400 text-sm">Mostrando 15 resultados de 30</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Clásico de Miel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white px-3 py-1 rounded text-[10px] font-bold tracking-widest uppercase shadow-sm">Destacado</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Clásico de Miel</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 500g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>A partir de 5 unidades, envío gratuito</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$24.90</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Fusión de Cacao" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKWfayhOy_61NfHCgzwclLKy6VXcAUnREzQczUW1AREq_rFwDBQYyscY0RpAbF1jxfDGC2v3OmhiCKZaIsijvRAo0c5-xIZV5NnI3x810qC0bLlgxTfXEum_wvG27lfOGUhyxAlUGeUmnY351v5E-OJLNcbWPjrp1klLxw-eKWQQoSaWGulCOTp_fe4t0KmZ4QhB0SYXcjAl1C1btdTJhXrmnAF9lql1tPT8JeO9tsgGdKxTMKFfd_5R8_NCnktn2xYxwtILESkjx"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Fusión de Cacao</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 400g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>A partir de 3 unidades, 10% de descuento</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$28.50</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Colección Imperial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxP5-DHShPVKkmSEQl01m2LLMOCaVjspsT-EQhrlqHmD9NHjTPeFVIs8d2DkGefi5_llp1ubP_asdS8nLyO9hajTfBm9XJlrLBNobosks2eu4j6GGxmtD0GnObRlWB-7giovZzBeeib-rnWLPqIWk3wOy33_uKsFCZR5k9McVevTpqMAscjsyE9xu7Bu0YSb7IIM0bTmHr_WIQOwjoEZ-14wdGFglNitE2v0bhTOml0cyguBHmRGAJmglPc3TUryJvQYMI_fH5ZU"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Colección Imperial</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Lote Premium 1kg</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Envío inmediato gratis a todo Lima</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$45.00</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Sabor Tradición" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Sabor Tradición</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 500g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Producto artesanal certificado</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$22.50</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Nuez y Miel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKWfayhOy_61NfHCgzwclLKy6VXcAUnREzQczUW1AREq_rFwDBQYyscY0RpAbF1jxfDGC2v3OmhiCKZaIsijvRAo0c5-xIZV5NnI3x810qC0bLlgxTfXEum_wvG27lfOGUhyxAlUGeUmnY351v5E-OJLNcbWPjrp1klLxw-eKWQQoSaWGulCOTp_fe4t0KmZ4QhB0SYXcjAl1C1btdTJhXrmnAF9lql1tPT8JeO9tsgGdKxTMKFfd_5R8_NCnktn2xYxwtILESkjx"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Nuez y Miel</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 450g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Edición especial de temporada</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$26.00</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Delicia de Ajonjolí" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxP5-DHShPVKkmSEQl01m2LLMOCaVjspsT-EQhrlqHmD9NHjTPeFVIs8d2DkGefi5_llp1ubP_asdS8nLyO9hajTfBm9XJlrLBNobosks2eu4j6GGxmtD0GnObRlWB-7giovZzBeeib-rnWLPqIWk3wOy33_uKsFCZR5k9McVevTpqMAscjsyE9xu7Bu0YSb7IIM0bTmHr_WIQOwjoEZ-14wdGFglNitE2v0bhTOml0cyguBHmRGAJmglPc3TUryJvQYMI_fH5ZU"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Delicia de Ajonjolí</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 500g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Receta original de 1950</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$23.90</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Artesanal Selección" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8GNbN1Zdo2TABRKp18rFKeCWAGsRVSf5HLvmVLA5TidPyCOi9XBMJT8WIhcIXOB_a6GhEOUf8yqhg-gwmK-gPMyhrLuwO1uvPay--vxzpesv85SFhxJceTzKtl5lDNqaJhiV3vJL6sqqkjBb7JsRhPCkjJmoTmhPGKxHupiRV49E4By82pqM75oq7frrHW6tte4Ivb4ZgN-TLLyxO4pIxUc-ys8xiV9l7INDK_MpwBqiOrNIQTzf5CgK-6h6pZQzmnBQtc0CEoDlL"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Artesanal Selección</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 600g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Miel de higo y membrillo</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$29.90</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Turrón de Doña" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Turrón de Doña</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 500g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Receta limeña tradicional</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$25.00</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Tentación Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKWfayhOy_61NfHCgzwclLKy6VXcAUnREzQczUW1AREq_rFwDBQYyscY0RpAbF1jxfDGC2v3OmhiCKZaIsijvRAo0c5-xIZV5NnI3x810qC0bLlgxTfXEum_wvG27lfOGUhyxAlUGeUmnY351v5E-OJLNcbWPjrp1klLxw-eKWQQoSaWGulCOTp_fe4t0KmZ4QhB0SYXcjAl1C1btdTJhXrmnAF9lql1tPT8JeO9tsgGdKxTMKFfd_5R8_NCnktn2xYxwtILESkjx"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Tentación Chocolate</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 400g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Cobertura de cacao al 70%</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$28.90</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Tesoro Exportación" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxP5-DHShPVKkmSEQl01m2LLMOCaVjspsT-EQhrlqHmD9NHjTPeFVIs8d2DkGefi5_llp1ubP_asdS8nLyO9hajTfBm9XJlrLBNobosks2eu4j6GGxmtD0GnObRlWB-7giovZzBeeib-rnWLPqIWk3wOy33_uKsFCZR5k9McVevTpqMAscjsyE9xu7Bu0YSb7IIM0bTmHr_WIQOwjoEZ-14wdGFglNitE2v0bhTOml0cyguBHmRGAJmglPc3TUryJvQYMI_fH5ZU"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Tesoro Exportación</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Caja de Lujo 800g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Empaque sellado al vacío</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$39.50</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Pack Familiar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Pack Familiar</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Combo 2 x 500g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Precio de oferta exclusiva</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$42.00</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Miel de Abeja Pura" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOKWfayhOy_61NfHCgzwclLKy6VXcAUnREzQczUW1AREq_rFwDBQYyscY0RpAbF1jxfDGC2v3OmhiCKZaIsijvRAo0c5-xIZV5NnI3x810qC0bLlgxTfXEum_wvG27lfOGUhyxAlUGeUmnY351v5E-OJLNcbWPjrp1klLxw-eKWQQoSaWGulCOTp_fe4t0KmZ4QhB0SYXcjAl1C1btdTJhXrmnAF9lql1tPT8JeO9tsgGdKxTMKFfd_5R8_NCnktn2xYxwtILESkjx"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Miel de Abeja Pura</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Envase de 1kg</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>100% natural sin aditivos</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$32.00</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Bocado de los Reyes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxP5-DHShPVKkmSEQl01m2LLMOCaVjspsT-EQhrlqHmD9NHjTPeFVIs8d2DkGefi5_llp1ubP_asdS8nLyO9hajTfBm9XJlrLBNobosks2eu4j6GGxmtD0GnObRlWB-7giovZzBeeib-rnWLPqIWk3wOy33_uKsFCZR5k9McVevTpqMAscjsyE9xu7Bu0YSb7IIM0bTmHr_WIQOwjoEZ-14wdGFglNitE2v0bhTOml0cyguBHmRGAJmglPc3TUryJvQYMI_fH5ZU"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Bocado de los Reyes</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 400g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Ingredientes premium seleccionados</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$27.50</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Turrón Crocante" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8GNbN1Zdo2TABRKp18rFKeCWAGsRVSf5HLvmVLA5TidPyCOi9XBMJT8WIhcIXOB_a6GhEOUf8yqhg-gwmK-gPMyhrLuwO1uvPay--vxzpesv85SFhxJceTzKtl5lDNqaJhiV3vJL6sqqkjBb7JsRhPCkjJmoTmhPGKxHupiRV49E4By82pqM75oq7frrHW6tte4Ivb4ZgN-TLLyxO4pIxUc-ys8xiV9l7INDK_MpwBqiOrNIQTzf5CgK-6h6pZQzmnBQtc0CEoDlL"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Turrón Crocante</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 500g</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Textura única y crujiente</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$24.50</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative aspect-[4/3] overflow-hidden bg-gray-50">
+<img alt="Lote de Regalo Oro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-0.5 mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<h3 class="font-sans text-[24px] font-semibold text-gray-900 dark:text-white mb-1 leading-tight">Lote de Regalo Oro</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Presentación de 1.5kg</p>
+<div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mb-6">
+<span class="material-symbols-outlined text-[18px] text-gray-400">check_circle</span>
+<span>Incluye estuche de madera grabado</span>
+</div>
+<div class="mt-auto flex items-center justify-between gap-4">
+<span class="text-[30px] font-semibold text-primary font-sans leading-none">$65.00</span>
+<button class="bg-primary hover:bg-primary-hover text-white font-sans font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm uppercase tracking-wide text-[13px] whitespace-nowrap">
+                            Añadir al carrito
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 flex justify-center items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-transparent hover:border-gray-200 dark:hover:border-gray-800 text-gray-600 dark:text-gray-400 transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-transparent hover:border-gray-200 dark:hover:border-gray-800 text-gray-600 dark:text-gray-400 transition-colors">3</button>
+<span class="text-gray-400 mx-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-transparent hover:border-gray-200 dark:hover:border-gray-800 text-gray-600 dark:text-gray-400 transition-colors">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<footer class="bg-premium-brown text-white pt-20 pb-10 font-sans">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+<div class="space-y-6">
+<a class="text-3xl font-display font-bold tracking-wider inline-block" href="#">CALDERÓN</a>
+<p class="text-white text-sm leading-relaxed font-normal opacity-90">
+                    Preservando el arte del turrón tradicional peruano con los mejores ingredientes y el amor de nuestra familia desde hace generaciones.
+                </p>
+<div class="flex items-center gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Enlaces Rápidos</h4>
+<ul class="space-y-4">
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Inicio</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Productos</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Para Empresas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Tiendas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Ayuda</h4>
+<ul class="space-y-4">
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Preguntas Frecuentes</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Envíos y Devoluciones</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Libro de Reclamaciones</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Contacto</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<p class="text-white text-sm font-normal opacity-90">Av. Abancay 350, Cercado de Lima, Perú</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">call</span>
+<a class="text-white hover:text-primary text-sm font-normal opacity-90" href="tel:+5114278901">(01) 427-8901</a>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-gray-300 text-xs font-normal tracking-widest uppercase text-center md:text-left">
+                © 2023 Turrones Calderón. Todos los derechos reservados.
+            </p>
+<div class="flex items-center gap-6 grayscale opacity-40">
+<img alt="Visa" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjn7ALwjply3d1gRRze-sQQMoESL-6RPSzNu2RMuwVGaKqMCiips_KiFtdsU-st78rDIepxZ-iaFV-tEvnBSMuKcnctZf4W4Q2WcY9UxWJrrjDVh4hAw8J9o2l8DfcQMJoHOh_bsP6GmEgrLCOKW3jZjerFL2NifK23sZdHIS15fji5JemvzlNR-G63C9axJX2dNc7M9yAsFNO2C9NNEFuSTz612S6g1IfRlILpKHdrAqsGQ4iOqKT-2hz7Z0_1_ICztFZUu0bDm33"/>
+<img alt="Mastercard" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSVShAmDcY-Bcg3GMh4mfbnZoiIqAC9oNeUxm3OvykF6nUaf7n-JxoPZfY4n0A20UaXFhtRxP-GNh8HdXkbv8Y61o6YhKeCCOVCKhpsqCJFVmSpyyROE_QwdtkIb9gQug0ruqpuVg38q65zLPtnSQMSa8hUa0s4HnS0MaD_l0UZz0irq9KOTl9Rf8N5iiRDQmSVEnrN9xNM9TzBM_WdJH8vpkXansRtLe2KssYHRrAd814NYq-LHF1kvhBuar82H3DyPZQ3G7jL55y"/>
+<img alt="American Express" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwijIvFzHHiMmkoZ228vVMVKv1TFpifhKbURNnk_4b_lAaXklpBvT2OQrYW3IIY2Jo-iWw3bq65R16owwrcAgoOGeu2cu9TY2cmF1edu_cR3XoGr7ObiZxNXVjwd8O4tLjVoYvMsl0rMeMiAdMDJxxWDVpIg6GFmcdNZ3qWgXi8ASqT01pvhX0CeOcOqlUWgTUdnnVd7m4Wy97oFhucxXwMIAuSsYa7mqcc6jvD6w8AWieK5wasy_RP58w7SzgvTV5XvjE7YkfuYkb"/>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('span');
+    // Cart Logic
+    const cartToggleBtn = document.getElementById('cart-toggle');
+    const cartOverlay = document.getElementById('cart-drawer-overlay');
+    const closeCartBtn = document.getElementById('close-cart');
+    function toggleCart() {
+        if (cartOverlay.classList.contains('open')) {
+            cartOverlay.classList.remove('open');
+            setTimeout(() => {
+                cartOverlay.style.visibility = 'hidden';
+            }, 300); // Match transition duration
+        } else {
+            cartOverlay.style.visibility = 'visible';
+            // Slight delay to allow display change to register for transition
+            requestAnimationFrame(() => {
+                cartOverlay.classList.add('open');
+            });
+        }
+    }
+    // Initial State for Cart (Closed)
+    cartOverlay.classList.remove('open');
+    cartOverlay.style.visibility = 'hidden';
+    cartToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleCart();
+    });
+    closeCartBtn.addEventListener('click', () => {
+        toggleCart();
+    });
+    // Close on click outside
+    cartOverlay.addEventListener('click', (e) => {
+        if (e.target === cartOverlay) {
+            toggleCart();
+        }
+    });
+    // Theme Logic
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        themeIcon.textContent = 'light_mode';
+    } else {
+        document.documentElement.classList.remove('dark');
+        themeIcon.textContent = 'dark_mode';
+    }
+    themeToggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.theme = 'dark';
+            themeIcon.textContent = 'light_mode';
+        } else {
+            localStorage.theme = 'light';
+            themeIcon.textContent = 'dark_mode';
+        }
+    });
+</script>
+</body></html>

@@ -1,0 +1,574 @@
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Turrones Calderón - Para Empresas</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f18b1e",
+                        "primary-hover": "#d67610",
+                        "background-light": "#ffffff",
+                        "background-dark": "#121212",
+                        "surface-light": "#f8f9fa",
+                        "surface-dark": "#1e1e1e",
+                        "premium-brown": "#4f1f15",
+                        "soft-off-white": "#fdfbf7",
+                        "testimonial-dark": "#1a1a1a",
+                        "card-dark": "rgba(255, 255, 255, 0.03)",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #f18b1e;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 0 0 4px rgba(241, 139, 30, 0.2);
+        }
+        .range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #f18b1e;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 0 0 4px rgba(241, 139, 30, 0.2);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .dark .glass-panel {
+            background: rgba(30, 30, 30, 0.95);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<header class="relative w-full h-[600px] lg:h-[700px] flex flex-col overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Stacked premium turrones dark background" class="w-full h-full object-cover object-center brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjH_SZtGMD4izPlS43sATBPI-tcGD01V1RA0lJ9vons-IWpBJedIbmHmvEhVgzRG6C5-jLqclBADUMBNwWRRNFqzVIdIcXiAjKQ8muDYhZeUDZX_VTlHoiWHcT3x1RtTVR7VrdddIRc_Ali_1sbCn4StopIWMsEelZfstOQukoEHyseBuBFs-uRz2QV8u6I2EkyhFPPHFkK8tFjPZJPKPCynMfpZCoxJq-nLhNpuzRW9HiveYLW4vKf7QgDoGfF-2BohEV7dI2uBLJ"/>
+</div>
+<div class="absolute inset-0 z-10 hero-gradient"></div>
+<nav class="relative z-50 w-full px-6 py-6 lg:px-12 flex justify-between items-center text-white">
+<div class="flex-shrink-0">
+<a class="text-2xl lg:text-3xl font-display font-bold tracking-wider hover:opacity-80 transition-opacity" href="#">
+                CALDERÓN
+            </a>
+</div>
+<div class="hidden md:flex space-x-8 lg:space-x-12 font-medium text-sm lg:text-base tracking-wide font-sans">
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Inicio</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Productos</a>
+<a class="text-primary border-b-2 border-primary pb-1" href="#">Para Empresas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#tiendas">Tiendas</a>
+</div>
+<div class="flex items-center space-x-6">
+<button aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none" id="theme-toggle">
+<span class="material-symbols-outlined text-white">dark_mode</span>
+</button>
+<a class="relative group p-2 hover:bg-white/10 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined text-2xl lg:text-3xl">shopping_cart</span>
+</a>
+<button class="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<div class="relative z-40 flex-grow flex items-center px-6 lg:px-12">
+<div class="max-w-3xl text-white">
+<span class="inline-block py-1.5 px-4 mb-6 border border-primary/50 text-primary rounded-full text-xs font-bold tracking-widest uppercase bg-black/30 backdrop-blur-sm font-sans">
+                Soluciones Corporativas
+            </span>
+<h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                Endulza tu Empresa con <span class="text-primary italic">Tradición Peruana</span>
+</h1>
+<p class="font-sans text-lg md:text-xl leading-relaxed text-gray-200 mb-10 max-w-xl drop-shadow-md font-light">
+                Regalos corporativos que dejan huella. Ofrece a tus colaboradores y clientes el sabor auténtico de Turrones Calderón con beneficios exclusivos para negocios.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 font-sans">
+<a class="bg-primary hover:bg-primary-hover text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-primary/50 transform hover:-translate-y-1 transition-all duration-300 text-lg flex items-center justify-center gap-2 group" href="#cotizar">
+                    Solicitar Cotización
+                    <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<section class="py-20 px-6 lg:px-12 bg-surface-light dark:bg-surface-dark transition-colors duration-300">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white dark:bg-white/5 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-white/10 group text-center">
+<div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+<span class="material-symbols-outlined text-3xl">inventory_2</span>
+</div>
+<h3 class="font-display text-xl font-bold text-premium-brown dark:text-white mb-3">Venta Mayorista</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Acceso a nuestro catálogo completo con stock garantizado para grandes pedidos.</p>
+</div>
+<div class="bg-white dark:bg-white/5 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-white/10 group text-center">
+<div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+<span class="material-symbols-outlined text-3xl">percent</span>
+</div>
+<h3 class="font-display text-xl font-bold text-premium-brown dark:text-white mb-3">Descuentos por Volumen</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Escalas de precios preferenciales diseñadas para maximizar tu rentabilidad.</p>
+</div>
+<div class="bg-white dark:bg-white/5 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-white/10 group text-center">
+<div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+<span class="material-symbols-outlined text-3xl">edit_note</span>
+</div>
+<h3 class="font-display text-xl font-bold text-premium-brown dark:text-white mb-3">Personalización</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Opciones de branding en empaques y tarjetas dedicatorias con tu marca.</p>
+</div>
+<div class="bg-white dark:bg-white/5 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-white/10 group text-center">
+<div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<h3 class="font-display text-xl font-bold text-premium-brown dark:text-white mb-3">Envío Preferencial</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Logística dedicada para entregas puntuales y seguras a nivel nacional.</p>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-soft-off-white dark:bg-surface-dark -skew-x-12 translate-x-20 z-0"></div>
+<div class="max-w-6xl mx-auto px-6 relative z-10">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="w-full lg:w-1/2">
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-3 block font-sans">Calculadora</span>
+<h2 class="font-display text-4xl md:text-5xl font-bold text-premium-brown dark:text-white mb-6">Planifica tu Inversión</h2>
+<p class="text-gray-500 dark:text-gray-300 font-normal text-lg mb-8 leading-relaxed font-sans">
+                    Utiliza nuestra herramienta interactiva para estimar el costo de tu pedido corporativo. Selecciona el producto y la cantidad para ver los descuentos aplicables en tiempo real.
+                </p>
+<div class="glass-panel p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800">
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Producto</label>
+<select class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-surface-dark py-3 px-4 focus:ring-primary focus:border-primary transition-shadow">
+<option>Turrón Clásico de Miel - 500g</option>
+<option>Turrón Clásico de Miel - 1kg</option>
+<option>Turrón Fusión de Cacao - 500g</option>
+<option>Pack Degustación Premium</option>
+</select>
+</div>
+<div class="mb-8">
+<div class="flex justify-between mb-2">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300">Cantidad</label>
+<span class="text-primary font-bold" id="qty-display">50 unidades</span>
+</div>
+<input class="range-slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" id="qty-slider" max="1000" min="10" type="range" value="50"/>
+<div class="flex justify-between text-xs text-gray-400 mt-2">
+<span>10</span>
+<span>500</span>
+<span>1000+</span>
+</div>
+</div>
+<div class="flex items-end justify-between border-t border-gray-100 dark:border-gray-700 pt-6">
+<div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Precio por unidad (estimado)</p>
+<p class="text-3xl font-bold text-premium-brown dark:text-white">S/ 18.50</p>
+</div>
+<div class="text-right">
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Ahorro total</p>
+<span class="inline-block bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full font-bold">-15% OFF</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 relative">
+<div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+<img alt="Turrón corporativo" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjH_SZtGMD4izPlS43sATBPI-tcGD01V1RA0lJ9vons-IWpBJedIbmHmvEhVgzRG6C5-jLqclBADUMBNwWRRNFqzVIdIcXiAjKQ8muDYhZeUDZX_VTlHoiWHcT3x1RtTVR7VrdddIRc_Ali_1sbCn4StopIWMsEelZfstOQukoEHyseBuBFs-uRz2QV8u6I2EkyhFPPHFkK8tFjPZJPKPCynMfpZCoxJq-nLhNpuzRW9HiveYLW4vKf7QgDoGfF-2BohEV7dI2uBLJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<div class="text-white">
+<p class="font-display text-2xl font-bold">Pack Corporativo Premium</p>
+<p class="text-white/80 text-sm mt-1">Ideal para regalos de fin de año</p>
+</div>
+</div>
+</div>
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-premium-brown/20 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-soft-off-white dark:bg-surface-dark transition-colors duration-300" id="cotizar">
+<div class="max-w-4xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="font-display text-4xl font-bold text-premium-brown dark:text-white mb-4">Solicita tu Cotización</h2>
+<p class="text-gray-500 dark:text-gray-400">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+</div>
+<form class="bg-white dark:bg-card-dark p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 dark:border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+<div class="space-y-6">
+<h3 class="font-bold text-lg text-premium-brown dark:text-primary border-b border-gray-100 dark:border-white/10 pb-2 mb-4">Datos de la Empresa</h3>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Razón Social</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-surface-dark focus:ring-primary focus:border-primary transition-shadow" placeholder="Nombre de tu empresa" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">RUC</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-surface-dark focus:ring-primary focus:border-primary transition-shadow" placeholder="20XXXXXXXXX" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Persona de Contacto</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-surface-dark focus:ring-primary focus:border-primary transition-shadow" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-surface-dark focus:ring-primary focus:border-primary transition-shadow" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Teléfono</label>
+<input class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-surface-dark focus:ring-primary focus:border-primary transition-shadow" type="tel"/>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h3 class="font-bold text-lg text-premium-brown dark:text-primary border-b border-gray-100 dark:border-white/10 pb-2 mb-4">Detalles del Pedido</h3>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Productos de Interés (Selección Múltiple)</label>
+<div class="space-y-3 bg-gray-50 dark:bg-surface-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 max-h-56 overflow-y-auto custom-scrollbar">
+<label class="flex items-start space-x-3 cursor-pointer p-2 hover:bg-white dark:hover:bg-white/5 rounded-md transition-colors">
+<input class="mt-0.5 rounded border-gray-300 text-primary focus:ring-primary h-5 w-5" name="products[]" type="checkbox" value="turron-clasico-500"/>
+<div>
+<span class="block text-gray-700 dark:text-gray-200 font-medium text-sm">Turrón Clásico de Miel - 500g</span>
+<span class="block text-xs text-gray-500 dark:text-gray-400">El formato más popular para regalos</span>
+</div>
+</label>
+<label class="flex items-start space-x-3 cursor-pointer p-2 hover:bg-white dark:hover:bg-white/5 rounded-md transition-colors">
+<input class="mt-0.5 rounded border-gray-300 text-primary focus:ring-primary h-5 w-5" name="products[]" type="checkbox" value="turron-clasico-1kg"/>
+<div>
+<span class="block text-gray-700 dark:text-gray-200 font-medium text-sm">Turrón Clásico de Miel - 1kg</span>
+<span class="block text-xs text-gray-500 dark:text-gray-400">Ideal para compartir en familia</span>
+</div>
+</label>
+<label class="flex items-start space-x-3 cursor-pointer p-2 hover:bg-white dark:hover:bg-white/5 rounded-md transition-colors">
+<input class="mt-0.5 rounded border-gray-300 text-primary focus:ring-primary h-5 w-5" name="products[]" type="checkbox" value="turron-fusion"/>
+<div>
+<span class="block text-gray-700 dark:text-gray-200 font-medium text-sm">Turrón Fusión de Cacao - 500g</span>
+<span class="block text-xs text-gray-500 dark:text-gray-400">Una variante gourmet moderna</span>
+</div>
+</label>
+<label class="flex items-start space-x-3 cursor-pointer p-2 hover:bg-white dark:hover:bg-white/5 rounded-md transition-colors">
+<input class="mt-0.5 rounded border-gray-300 text-primary focus:ring-primary h-5 w-5" name="products[]" type="checkbox" value="pack-degustacion"/>
+<div>
+<span class="block text-gray-700 dark:text-gray-200 font-medium text-sm">Pack Degustación Premium</span>
+<span class="block text-xs text-gray-500 dark:text-gray-400">Surtido de sabores selectos</span>
+</div>
+</label>
+<label class="flex items-start space-x-3 cursor-pointer p-2 hover:bg-white dark:hover:bg-white/5 rounded-md transition-colors">
+<input class="mt-0.5 rounded border-gray-300 text-primary focus:ring-primary h-5 w-5" name="products[]" type="checkbox" value="pack-regalo"/>
+<div>
+<span class="block text-gray-700 dark:text-gray-200 font-medium text-sm">Packs de Regalo Corporativo</span>
+<span class="block text-xs text-gray-500 dark:text-gray-400">Presentación de lujo lista para entregar</span>
+</div>
+</label>
+<label class="flex items-start space-x-3 cursor-pointer p-2 hover:bg-white dark:hover:bg-white/5 rounded-md transition-colors">
+<input class="mt-0.5 rounded border-gray-300 text-primary focus:ring-primary h-5 w-5" name="products[]" type="checkbox" value="otros"/>
+<div>
+<span class="block text-gray-700 dark:text-gray-200 font-medium text-sm">Otros / Personalizado</span>
+<span class="block text-xs text-gray-500 dark:text-gray-400">Requerimientos especiales</span>
+</div>
+</label>
+</div>
+<p class="text-xs text-gray-400 mt-2">Seleccione uno o más productos de la lista.</p>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Cantidad Aproximada Total</label>
+<select class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-surface-dark focus:ring-primary focus:border-primary transition-shadow">
+<option>10 - 50 unidades</option>
+<option>51 - 100 unidades</option>
+<option>101 - 500 unidades</option>
+<option>Más de 500 unidades</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Mensaje Adicional</label>
+<textarea class="w-full rounded-lg border-gray-200 dark:border-gray-700 dark:bg-surface-dark focus:ring-primary focus:border-primary transition-shadow" placeholder="¿Necesitas personalización o fecha específica?" rows="3"></textarea>
+</div>
+</div>
+</div>
+<div class="text-center pt-4">
+<button class="w-full md:w-auto min-w-[250px] bg-primary hover:bg-primary-hover text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-primary/50 transform hover:-translate-y-1 transition-all duration-300 text-lg" type="submit">
+                    Enviar Solicitud
+                </button>
+<p class="text-xs text-gray-400 mt-4">Al enviar, aceptas nuestra política de privacidad y tratamiento de datos.</p>
+</div>
+</form>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-3 block font-sans">Aplicaciones</span>
+<h2 class="font-display text-4xl md:text-5xl font-bold text-premium-brown dark:text-white mb-6">Momentos Perfectos</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer">
+<img alt="Regalos Corporativos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdDPYt7fumGHldYoEt3uo6fd3naMt5LqCIhRqQhhb-bi8vwoPnsA1EH6X99jXYVq3p8Di6QkEu47jfGEPSLtU4UV0aetxgXPKPleQt4hTEGxq3kq6D0jhgm4Zb9Z2_mjBhpOl7rUGGkxUvaqZVg8H-tjfs7adbnP3vRvV6MaFy3syfVGNoQtwItmSJU2BCZKqsjm7ymKMnW-90LQMOjALO5Cki2y9lTzBjmz4g0HC1Z-SaJlunBT9bWOVw48V3FDbwtB8djHRcFx0C"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="text-white font-display text-2xl font-bold mb-2">Regalos Corporativos</h3>
+<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Detalles que fortalecen lazos en fechas especiales como Navidad o aniversarios.</p>
+</div>
+</div>
+<div class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer">
+<img alt="Eventos y Catering" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5NNk_P06gQ17yIChvBlIzC6GFGAwAURcscZxKOAGwYgX-cNwBPRtY4aIBGpPlA-cOAGLJ-Eb8fJWaYrBSi_SMGSWYWwU7DBNzpyMflZhQxTwdL2ij_zwXNyPfKKJcDL0TcUFsFbWN5fvJtuUXZfC98HYYsCcpNh0JQo1QWfa12gvMtFaHBECz9AHKp3mviBC8b2_-81-iztS5hGoDTF0zvIAHGTvBAqElQ5Hvihj7uc7yq6Ac7xSQWaYyyey5a-L6JLVBiEAUizJ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="text-white font-display text-2xl font-bold mb-2">Eventos y Catering</h3>
+<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Mesas de dulces y estaciones de postres para lanzamientos y celebraciones.</p>
+</div>
+</div>
+<div class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer">
+<img alt="Clientes VIP" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_TVHgK9BCc68lei2vzzOFrfOuH-y6KiIqW27n8bGO814_Uc7l4viMlYuPbkq4wOo9xNajJaQyLDjP4nl6Eut820CW7EV5l2N_ZasHz1k-SjI11TlVS1bITCIdTtaQYeIjzTt9HhSUhNM-xL0f3SX7ESXz5yLRxxj342kfsIuuMpHVqKWIgUnGNR99BCy4k4IEib6zy5eTXCHBLqjAWgYgiSFzvPEhQASVlbQf7V4b-G6PRzhah-i1gWXgUBKrdwsuacNAdil8bWfM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="text-white font-display text-2xl font-bold mb-2">Clientes VIP</h3>
+<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Presentaciones exclusivas de lujo para tus socios más importantes.</p>
+</div>
+</div>
+<div class="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer">
+<img alt="Pedidos Recurrentes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8GNbN1Zdo2TABRKp18rFKeCWAGsRVSf5HLvmVLA5TidPyCOi9XBMJT8WIhcIXOB_a6GhEOUf8yqhg-gwmK-gPMyhrLuwO1uvPay--vxzpesv85SFhxJceTzKtl5lDNqaJhiV3vJL6sqqkjBb7JsRhPCkjJmoTmhPGKxHupiRV49E4By82pqM75oq7frrHW6tte4Ivb4ZgN-TLLyxO4pIxUc-ys8xiV9l7INDK_MpwBqiOrNIQTzf5CgK-6h6pZQzmnBQtc0CEoDlL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="text-white font-display text-2xl font-bold mb-2">Pedidos Recurrentes</h3>
+<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Abastecimiento mensual para cafeterías de oficina y salas de reuniones.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-light dark:bg-surface-dark transition-colors duration-300">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl font-bold text-premium-brown dark:text-white mb-6">Escala de Precios</h2>
+<p class="text-gray-500 font-normal text-lg max-w-2xl mx-auto">Transparencia en nuestros beneficios por volumen.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+<div class="bg-white dark:bg-white/5 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-white/10 text-center">
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Pequeña Empresa</h3>
+<p class="text-gray-500 text-sm mb-6">Pedidos puntuales</p>
+<div class="text-4xl font-bold text-premium-brown dark:text-primary mb-2">5% <span class="text-lg text-gray-400 font-normal">dscto</span></div>
+<p class="text-sm text-gray-500 mb-8">10 - 49 unidades</p>
+<ul class="text-left space-y-3 mb-8 text-sm text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span> Envío estándar</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span> Factura electrónica</li>
+<li class="flex items-center gap-2 text-gray-400"><span class="material-symbols-outlined text-gray-300 text-lg">cancel</span> Personalización</li>
+</ul>
+<a class="block w-full py-2 border border-premium-brown text-premium-brown dark:border-white dark:text-white rounded-lg hover:bg-premium-brown hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-medium" href="#cotizar">Cotizar</a>
+</div>
+<div class="bg-white dark:bg-card-dark p-10 rounded-3xl shadow-2xl border-2 border-primary relative transform scale-105 z-10 text-center">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">Mejor Valor</div>
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Corporativo</h3>
+<p class="text-gray-500 text-sm mb-6">Eventos y campañas</p>
+<div class="text-5xl font-bold text-primary mb-2">15% <span class="text-lg text-gray-400 font-normal">dscto</span></div>
+<p class="text-sm text-gray-500 mb-8">50 - 199 unidades</p>
+<ul class="text-left space-y-4 mb-10 text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-xl">check_circle</span> Envío prioritario</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-xl">check_circle</span> Logo en tarjeta</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-xl">check_circle</span> Asesor asignado</li>
+</ul>
+<a class="block w-full py-3 bg-primary text-white rounded-xl hover:bg-primary-hover transition-colors font-bold shadow-lg" href="#cotizar">Cotizar Ahora</a>
+</div>
+<div class="bg-white dark:bg-white/5 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-white/10 text-center">
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Gran Volumen</h3>
+<p class="text-gray-500 text-sm mb-6">Distribución masiva</p>
+<div class="text-4xl font-bold text-premium-brown dark:text-primary mb-2">25% <span class="text-lg text-gray-400 font-normal">dscto</span></div>
+<p class="text-sm text-gray-500 mb-8">200+ unidades</p>
+<ul class="text-left space-y-3 mb-8 text-sm text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span> Logística dedicada</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span> Branding total</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span> Crédito corporativo</li>
+</ul>
+<a class="block w-full py-2 border border-premium-brown text-premium-brown dark:border-white dark:text-white rounded-lg hover:bg-premium-brown hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-medium" href="#cotizar">Contactar</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-dark text-white relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-12">
+<h2 class="font-display text-3xl font-bold mb-4">100+ empresas confían en nosotros</h2>
+<div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 mb-16">
+<div class="text-2xl font-bold tracking-tighter flex items-center gap-2"><span class="material-symbols-outlined">apartment</span> CORP.GROUP</div>
+<div class="text-2xl font-bold tracking-widest flex items-center gap-2"><span class="material-symbols-outlined">business</span> FINANCE</div>
+<div class="text-2xl font-serif italic flex items-center gap-2"><span class="material-symbols-outlined">store</span> RetailCo</div>
+<div class="text-2xl font-mono flex items-center gap-2"><span class="material-symbols-outlined">domain</span> TECH.IO</div>
+</div>
+<div class="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl max-w-4xl mx-auto text-center border border-white/10">
+<span class="material-symbols-outlined text-5xl text-primary mb-6">format_quote</span>
+<p class="text-xl md:text-2xl font-display leading-relaxed mb-6 italic">
+                "Elegir Turrones Calderón para nuestros regalos de fin de año fue un acierto total. La presentación impecable y el sabor tradicional encantaron a todos nuestros colaboradores. El servicio de entrega fue puntual y muy profesional."
+            </p>
+<div>
+<h4 class="font-bold text-primary">Mariana López</h4>
+<p class="text-sm text-gray-400">Gerente de RRHH, Banco Nacional</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark">
+<div class="max-w-3xl mx-auto px-6">
+<h2 class="font-display text-3xl font-bold text-center text-premium-brown dark:text-white mb-12">Preguntas Frecuentes Corporativas</h2>
+<div class="space-y-4">
+<details class="group bg-surface-light dark:bg-surface-dark rounded-xl">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800 dark:text-gray-200">
+<span>¿Con cuánto tiempo de anticipación debo hacer mi pedido?</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="text-gray-600 dark:text-gray-400 mt-3 px-6 pb-6 leading-relaxed">
+                    Para pedidos mayores a 50 unidades, recomendamos realizar el pedido con al menos 1 semana de anticipación. Para campañas grandes de fin de año (Octubre-Diciembre), sugerimos reservar con 3 semanas de antelación para garantizar disponibilidad y fechas de entrega.
+                </div>
+</details>
+<details class="group bg-surface-light dark:bg-surface-dark rounded-xl">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800 dark:text-gray-200">
+<span>¿Emiten factura electrónica?</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="text-gray-600 dark:text-gray-400 mt-3 px-6 pb-6 leading-relaxed">
+                    Sí, emitimos factura electrónica válida para crédito fiscal. Todos los precios mostrados en las cotizaciones incluyen IGV.
+                </div>
+</details>
+<details class="group bg-surface-light dark:bg-surface-dark rounded-xl">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-lg text-gray-800 dark:text-gray-200">
+<span>¿Puedo solicitar muestras antes de comprar?</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="text-gray-600 dark:text-gray-400 mt-3 px-6 pb-6 leading-relaxed">
+                    Por supuesto. Para empresas interesadas en pedidos superiores a 50 unidades, ofrecemos un "Kit de Degustación" que podemos enviar a sus oficinas. Contáctanos para coordinarlo.
+                </div>
+</details>
+</div>
+</div>
+</section>
+<footer class="bg-premium-brown text-white pt-20 pb-10 font-sans border-t border-white/10">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+<div class="space-y-6">
+<a class="text-3xl font-display font-bold tracking-wider inline-block" href="#">CALDERÓN</a>
+<p class="text-white text-sm leading-relaxed font-normal opacity-90">
+                    Preservando el arte del turrón tradicional peruano con los mejores ingredientes y el amor de nuestra familia desde hace generaciones.
+                </p>
+<div class="flex items-center gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<i class="fab fa-instagram"></i>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<i class="fab fa-whatsapp"></i>
+</a>
+</div>
+</div>
+<div class="lg:pl-8">
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Enlaces Rápidos</h4>
+<ul class="space-y-4">
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Inicio</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Productos</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Para Empresas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#tiendas">Tiendas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Atención al Cliente</h4>
+<ul class="space-y-4">
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Preguntas Frecuentes</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Envíos y Devoluciones</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Libro de Reclamaciones</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Contacto</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<p class="text-white text-sm font-normal opacity-90">Av. Abancay 350, Cercado de Lima, Perú</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+<a class="text-white hover:text-primary text-sm font-normal opacity-90" href="mailto:ventas@turronescalderon.com">ventas@turronescalderon.com</a>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">call</span>
+<a class="text-white hover:text-primary text-sm font-normal opacity-90" href="tel:+5114278901">(01) 427-8901</a>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-gray-300 text-xs font-normal tracking-widest uppercase">
+                © 2023 Turrones Calderón. Todos los derechos reservados.
+            </p>
+<div class="flex items-center gap-6 grayscale opacity-40">
+<img alt="Visa" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjn7ALwjply3d1gRRze-sQQMoESL-6RPSzNu2RMuwVGaKqMCiips_KiFtdsU-st78rDIepxZ-iaFV-tEvnBSMuKcnctZf4W4Q2WcY9UxWJrrjDVh4hAw8J9o2l8DfcQMJoHOh_bsP6GmEgrLCOKW3jZjerFL2NifK23sZdHIS15fji5JemvzlNR-G63C9axJX2dNc7M9yAsFNO2C9NNEFuSTz612S6g1IfRlILpKHdrAqsGQ4iOqKT-2hz7Z0_1_ICztFZUu0bDm33"/>
+<img alt="Mastercard" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSVShAmDcY-Bcg3GMh4mfbnZoiIqAC9oNeUxm3OvykF6nUaf7n-JxoPZfY4n0A20UaXFhtRxP-GNh8HdXkbv8Y61o6YhKeCCOVCKhpsqCJFVmSpyyROE_QwdtkIb9gQug0ruqpuVg38q65zLPtnSQMSa8hUa0s4HnS0MaD_l0UZz0irq9KOTl9Rf8N5iiRDQmSVEnrN9xNM9TzBM_WdJH8vpkXansRtLe2KssYHRrAd814NYq-LHF1kvhBuar82H3DyPZQ3G7jL55y"/>
+<img alt="American Express" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwijIvFzHHiMmkoZ228vVMVKv1TFpifhKbURNnk_4b_lAaXklpBvT2OQrYW3IIY2Jo-iWw3bq65R16owwrcAgoOGeu2cu9TY2cmF1edu_cR3XoGr7ObiZxNXVjwd8O4tLjVoYvMsl0rMeMiAdMDJxxWDVpIg6GFmcdNZ3qWgXi8ASqT01pvhX0CeOcOqlUWgTUdnnVd7m4Wy97oFhucxXwMIAuSsYa7mqcc6jvD6w8AWieK5wasy_RP58w7SzgvTV5XvjE7YkfuYkb"/>
+<img alt="PayPal" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEpcmvb1BThGUQD55Jo8320qJk0ht97uZXyT2WAZnC5QFr8cRLaXThA_uueTMfSG6SlgcmA2kkzacJ4axpn8Cv9tRBPrxBsotap6yWryFGK7pld-TjQy74BFFPurOzxZEQ5vLeP6225yE6E4ompGf3CPBEhTrUjsd6E9C2gF77upw3CbwtfZa3RejswGdjSwBohBHcXk61HPUJ_jVoU5KVDwTNSpuOlocw9AFQbXFsarbR1VkQ04sS-rNK3zZ8fK9TV2f_DZ07A4K"/>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('span');
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        themeIcon.textContent = 'light_mode';
+    } else {
+        document.documentElement.classList.remove('dark');
+        themeIcon.textContent = 'dark_mode';
+    }
+    themeToggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.theme = 'dark';
+            themeIcon.textContent = 'light_mode';
+        } else {
+            localStorage.theme = 'light';
+            themeIcon.textContent = 'dark_mode';
+        }
+    });
+    const qtySlider = document.getElementById('qty-slider');
+    const qtyDisplay = document.getElementById('qty-display');
+    qtySlider.addEventListener('input', (e) => {
+        qtyDisplay.textContent = `${e.target.value} unidades`;
+    });
+</script>
+
+</body></html>

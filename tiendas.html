@@ -1,0 +1,290 @@
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nuestras Tiendas - Turrones Calderón</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f18b1e",
+                        "primary-hover": "#d67610",
+                        "background-light": "#ffffff",
+                        "background-dark": "#121212",
+                        "surface-light": "#f8f9fa",
+                        "surface-dark": "#1e1e1e",
+                        "premium-brown": "#4f1f15",
+                        "soft-off-white": "#fdfbf7",
+                        "testimonial-dark": "#1a1a1a",
+                        "card-dark": "rgba(255, 255, 255, 0.03)",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            filter: grayscale(0.2) contrast(1.1);
+        }.shop-list-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .shop-list-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .shop-list-scroll::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        .shop-list-scroll::-webkit-scrollbar-thumb:hover {
+            background: #ccc;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<header class="absolute top-0 left-0 w-full h-[80px] lg:h-[100px] flex items-center bg-transparent z-50">
+<nav class="w-full px-6 lg:px-12 flex justify-between items-center text-white">
+<div class="flex-shrink-0">
+<a class="text-2xl lg:text-3xl font-display font-bold tracking-wider hover:opacity-80 transition-opacity" href="#">
+                CALDERÓN
+            </a>
+</div>
+<div class="hidden md:flex space-x-8 lg:space-x-12 font-medium text-sm lg:text-base tracking-wide font-sans">
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Inicio</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Productos</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Para Empresas</a>
+<a class="text-primary border-b-2 border-primary pb-1" href="#tiendas">Tiendas</a>
+</div>
+<div class="flex items-center space-x-6">
+<button aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none" id="theme-toggle">
+<span class="material-symbols-outlined text-white">dark_mode</span>
+</button>
+<a class="relative group p-2 hover:bg-white/10 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined text-2xl lg:text-3xl">shopping_cart</span>
+<span class="absolute top-1 right-0 h-4 w-4 bg-primary text-white text-[10px] font-bold flex items-center justify-center rounded-full group-hover:scale-110 transition-transform">2</span>
+</a>
+<button class="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<section class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Interior tienda Turrones Calderón" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA29eGduQRh7-8ZLGFDBnZwPS2zV27mN78Blbpp1UCUmlDMwyB8d_RZn1xUfkB3SCmPmmqyajqbv48HHNxf4qIfE9ZA3SfjgQaGMTnMqDzHlr-Xaz5RiImupUFxT6JSTx-lr6lu8odFu42OGaYCIkQ5bUA958NwR4OBcXN4MRHrrRKhgxX7O8eMgmGHKJVmpoyGfMcZaz0NYAR26rwbfKCawoMYIA-ALPq3QkFTPewAKIIruHrDdc2_uS877sC-ANeOveTacB7EOFmQ"/>
+<div class="absolute inset-0 bg-black/60 z-10"></div>
+</div>
+<div class="relative z-20 text-center px-6 max-w-4xl mx-auto pt-20">
+<h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-xl">
+            Donde la Tradición se Encuentra con Usted
+        </h1>
+<div class="w-20 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
+<p class="font-sans text-lg md:text-xl text-gray-200 leading-relaxed font-light drop-shadow-md max-w-2xl mx-auto">
+            Visite nuestros locales y déjese envolver por el aroma inconfundible de la miel y el ajonjolí recién tostado. Cada tienda es un rincón de historia esperando por usted.
+        </p>
+</div>
+</section>
+<section class="py-12 bg-soft-off-white dark:bg-surface-dark transition-colors duration-300 h-auto lg:h-[calc(100vh-100px)] flex flex-col">
+<div class="max-w-[1920px] mx-auto w-full px-4 lg:px-8 h-full flex-grow">
+<div class="flex flex-col lg:flex-row gap-6 h-full rounded-2xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-surface-dark">
+<div class="w-full lg:w-1/4 flex flex-col bg-white dark:bg-surface-dark border-r border-gray-100 dark:border-gray-800 relative z-10 h-full overflow-y-auto shop-list-scroll">
+<div class="p-8 border-b border-gray-100 dark:border-gray-800 sticky top-0 bg-white dark:bg-surface-dark z-20">
+<span class="text-xs font-bold text-primary uppercase tracking-widest mb-2 block">Tienda Seleccionada</span>
+<h2 class="font-display text-3xl font-bold text-premium-brown dark:text-white mb-4">Sede Central - Abancay</h2>
+<div class="flex items-center gap-2 mb-6">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</span>
+<span class="text-sm font-semibold text-green-600 dark:text-green-400">Abierto ahora</span>
+<span class="text-xs text-gray-400 dark:text-gray-500 ml-1">• Cierra a las 22:00</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary-hover text-white font-sans font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">near_me</span>
+                        Cómo llegar
+                    </button>
+</div>
+<div class="p-8 space-y-8 flex-grow">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-soft-off-white dark:bg-white/5 flex items-center justify-center flex-shrink-0 text-premium-brown dark:text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-1 uppercase tracking-wide">Dirección</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                Av. Abancay 350,<br/>Cercado de Lima, 15001<br/>Lima, Perú
+                            </p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-soft-off-white dark:bg-white/5 flex items-center justify-center flex-shrink-0 text-premium-brown dark:text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-1 uppercase tracking-wide">Teléfono</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm">
+<a class="hover:text-primary transition-colors" href="tel:+5114278901">(01) 427-8901</a>
+</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-soft-off-white dark:bg-white/5 flex items-center justify-center flex-shrink-0 text-premium-brown dark:text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="w-full">
+<h3 class="font-bold text-gray-900 dark:text-gray-100 text-sm mb-3 uppercase tracking-wide">Horario de Atención</h3>
+<ul class="text-sm space-y-2 text-gray-600 dark:text-gray-400 w-full">
+<li class="flex justify-between border-b border-gray-100 dark:border-gray-800 pb-1">
+<span>Lunes - Viernes</span>
+<span class="font-medium text-gray-900 dark:text-gray-200">09:00 - 22:00</span>
+</li>
+<li class="flex justify-between border-b border-gray-100 dark:border-gray-800 pb-1">
+<span>Sábados</span>
+<span class="font-medium text-gray-900 dark:text-gray-200">10:00 - 22:00</span>
+</li>
+<li class="flex justify-between">
+<span>Domingos</span>
+<span class="font-medium text-gray-900 dark:text-gray-200">10:00 - 20:00</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="p-8 bg-gray-50 dark:bg-black/20 mt-auto border-t border-gray-100 dark:border-gray-800">
+<h4 class="font-bold text-premium-brown dark:text-gray-200 mb-4 text-sm uppercase">Otras Sedes</h4>
+<div class="space-y-3">
+<button class="w-full text-left p-3 rounded bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary transition-colors group">
+<div class="font-bold text-gray-800 dark:text-gray-200 text-sm group-hover:text-primary">Miraflores - Larco</div>
+<div class="text-xs text-gray-500">Av. Larco 850</div>
+</button>
+<button class="w-full text-left p-3 rounded bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary transition-colors group">
+<div class="font-bold text-gray-800 dark:text-gray-200 text-sm group-hover:text-primary">San Miguel - Plaza</div>
+<div class="text-xs text-gray-500">Av. La Marina 2000</div>
+</button>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-3/4 h-[500px] lg:h-auto bg-gray-200 relative overflow-hidden map-container">
+<iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.977457782782!2d-77.03088712396653!3d-12.045050441865955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b668f163e3%3A0x773724c960411a0!2sAv.%20Abancay%2C%20Lima!5e0!3m2!1ses!2spe!4v1716300000000!5m2!1ses!2spe" style="border:0;">
+</iframe>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur p-3 rounded-lg shadow-lg z-10 hidden md:block max-w-xs">
+<p class="text-xs text-gray-500 mb-1">Mapa Interactivo</p>
+<p class="text-sm font-medium text-gray-800">Selecciona un marcador naranja para ver los detalles de la tienda.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-premium-brown text-white pt-20 pb-10 font-sans mt-auto">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+<div class="space-y-6">
+<a class="text-3xl font-display font-bold tracking-wider inline-block" href="#">CALDERÓN</a>
+<p class="text-white text-sm leading-relaxed font-normal opacity-90">
+                    Preservando el arte del turrón tradicional peruano con los mejores ingredientes y el amor de nuestra familia desde hace generaciones.
+                </p>
+<div class="flex items-center gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+</a>
+</div>
+</div>
+<div class="lg:pl-8">
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Enlaces Rápidos</h4>
+<ul class="space-y-4">
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Inicio</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Productos</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Para Empresas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#tiendas">Tiendas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Atención al Cliente</h4>
+<ul class="space-y-4">
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Preguntas Frecuentes</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Envíos y Devoluciones</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Libro de Reclamaciones</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Contacto</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<p class="text-white text-sm font-normal opacity-90">Av. Abancay 350, Cercado de Lima, Perú</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+<a class="text-white hover:text-primary text-sm font-normal opacity-90" href="mailto:hola@turronescalderon.com">hola@turronescalderon.com</a>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">call</span>
+<a class="text-white hover:text-primary text-sm font-normal opacity-90" href="tel:+5114278901">(01) 427-8901</a>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-gray-300 text-xs font-normal tracking-widest uppercase">
+                © 2023 Turrones Calderón. Todos los derechos reservados.
+            </p>
+<div class="flex items-center gap-6 grayscale opacity-40">
+<img alt="Visa" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjn7ALwjply3d1gRRze-sQQMoESL-6RPSzNu2RMuwVGaKqMCiips_KiFtdsU-st78rDIepxZ-iaFV-tEvnBSMuKcnctZf4W4Q2WcY9UxWJrrjDVh4hAw8J9o2l8DfcQMJoHOh_bsP6GmEgrLCOKW3jZjerFL2NifK23sZdHIS15fji5JemvzlNR-G63C9axJX2dNc7M9yAsFNO2C9NNEFuSTz612S6g1IfRlILpKHdrAqsGQ4iOqKT-2hz7Z0_1_ICztFZUu0bDm33"/>
+<img alt="Mastercard" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSVShAmDcY-Bcg3GMh4mfbnZoiIqAC9oNeUxm3OvykF6nUaf7n-JxoPZfY4n0A20UaXFhtRxP-GNh8HdXkbv8Y61o6YhKeCCOVCKhpsqCJFVmSpyyROE_QwdtkIb9gQug0ruqpuVg38q65zLPtnSQMSa8hUa0s4HnS0MaD_l0UZz0irq9KOTl9Rf8N5iiRDQmSVEnrN9xNM9TzBM_WdJH8vpkXansRtLe2KssYHRrAd814NYq-LHF1kvhBuar82H3DyPZQ3G7jL55y"/>
+<img alt="American Express" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwijIvFzHHiMmkoZ228vVMVKv1TFpifhKbURNnk_4b_lAaXklpBvT2OQrYW3IIY2Jo-iWw3bq65R16owwrcAgoOGeu2cu9TY2cmF1edu_cR3XoGr7ObiZxNXVjwd8O4tLjVoYvMsl0rMeMiAdMDJxxWDVpIg6GFmcdNZ3qWgXi8ASqT01pvhX0CeOcOqlUWgTUdnnVd7m4Wy97oFhucxXwMIAuSsYa7mqcc6jvD6w8AWieK5wasy_RP58w7SzgvTV5XvjE7YkfuYkb"/>
+<img alt="PayPal" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEpcmvb1BThGUQD55Jo8320qJk0ht97uZXyT2WAZnC5QFr8cRLaXThA_uueTMfSG6SlgcmA2kkzacJ4axpn8Cv9tRBPrxBsotap6yWryFGK7pld-TjQy74BFFPurOzxZEQ5vLeP6225yE6E4ompGf3CPBEhTrUjsd6E9C2gF77upw3CbwtfZa3RejswGdjSwBohBHcXk61HPUJ_jVoU5KVDwTNSpuOlocw9AFQbXFsarbR1VkQ04sS-rNK3zZ8fK9TV2f_DZ07A4K"/>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('span');
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        themeIcon.textContent = 'light_mode';
+    } else {
+        document.documentElement.classList.remove('dark');
+        themeIcon.textContent = 'dark_mode';
+    }
+    themeToggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.theme = 'dark';
+            themeIcon.textContent = 'light_mode';
+        } else {
+            localStorage.theme = 'light';
+            themeIcon.textContent = 'dark_mode';
+        }
+    });
+</script>
+</body></html>
