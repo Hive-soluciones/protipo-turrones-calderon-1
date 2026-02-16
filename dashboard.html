@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel de Control - Turrones Calderón</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f18b1e",
+                        "primary-hover": "#d67610",
+                        "premium-brown": "#4f1f15",
+                        "surface-light": "#f8f9fa",
+                        "border-color": "#e2e8f0",
+                        "success": "#10b981",
+                        "warning": "#f59e0b",
+                        "info": "#3b82f6",
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-surface-light text-gray-800 min-h-screen flex flex-col">
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="flex">
+<div class="flex-shrink-0 flex items-center">
+<a class="text-2xl font-bold tracking-wider text-premium-brown" href="#">
+                            CALDERÓN
+                        </a>
+<span class="ml-2 text-xs font-medium px-2 py-0.5 rounded bg-gray-100 text-gray-500 uppercase tracking-wide">Admin</span>
+</div>
+<nav class="hidden sm:ml-10 sm:flex sm:space-x-8">
+<a class="border-primary text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" href="#">
+                            Panel
+                        </a>
+<a class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" href="#">
+                            Listado
+                        </a>
+<a class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" href="#">
+                            Planeación
+                        </a>
+<a class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium" href="#">
+                            Inventario
+                        </a>
+</nav>
+</div>
+<div class="flex items-center">
+<button class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none relative">
+<span class="sr-only">Ver notificaciones</span>
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white"></span>
+</button>
+<div class="ml-4 flex items-center gap-3">
+<div class="text-right hidden md:block">
+<p class="text-sm font-medium text-gray-900">Admin General</p>
+<p class="text-xs text-gray-500">Lima, PE</p>
+</div>
+<img alt="" class="h-8 w-8 rounded-full bg-gray-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9cWrXD4bS6f-XD3ipqY1yzM6PyVSr1V0bybPW28sUvh8jBllrVkYVxFi1HwqIrNO6Jhpg_bYj8M_wivoGMcekY51zd1ybRkCcCGIASZkXK5UcyPHpvzR9q5XeS8oeUeaTXz9J9amJIBxSTimuN_gHjOwFYONfAdNjhUo1627eZxim7uV3y6pNs_1USr7H3QFMbq7kq-80Up2HtrsAYSNwOaypDT74VQOFiF1dIKDWtB-vdNoccwJ0gVtd_erGULmvDLOY6DMenA8Y"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+<div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+<div>
+<h1 class="text-2xl font-bold text-gray-900">Panel de Control de Pedidos</h1>
+<p class="mt-1 text-sm text-gray-500">Resumen operativo del día - <span id="current-date"></span></p>
+</div>
+<div class="mt-4 sm:mt-0 flex gap-3">
+<button class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none" type="button">
+<span class="material-symbols-outlined text-lg mr-2">download</span>
+                    Exportar Reporte
+                </button>
+<button class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-hover focus:outline-none" type="button">
+<span class="material-symbols-outlined text-lg mr-2">add</span>
+                    Nuevo Pedido
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+<div class="bg-white overflow-hidden shadow rounded-lg border-l-4 border-warning">
+<div class="p-5">
+<div class="flex items-center">
+<div class="flex-shrink-0">
+<div class="rounded-md bg-warning/10 p-3">
+<span class="material-symbols-outlined text-warning text-2xl">pending_actions</span>
+</div>
+</div>
+<div class="ml-5 w-0 flex-1">
+<dl>
+<dt class="text-sm font-medium text-gray-500 truncate">Pendientes</dt>
+<dd>
+<div class="text-2xl font-bold text-gray-900">12</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 px-5 py-3">
+<div class="text-sm">
+<a class="font-medium text-warning hover:text-yellow-600 flex items-center" href="#">
+                            Ver detalles <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white overflow-hidden shadow rounded-lg border-l-4 border-info">
+<div class="p-5">
+<div class="flex items-center">
+<div class="flex-shrink-0">
+<div class="rounded-md bg-info/10 p-3">
+<span class="material-symbols-outlined text-info text-2xl">factory</span>
+</div>
+</div>
+<div class="ml-5 w-0 flex-1">
+<dl>
+<dt class="text-sm font-medium text-gray-500 truncate">En Producción</dt>
+<dd>
+<div class="text-2xl font-bold text-gray-900">45</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 px-5 py-3">
+<div class="text-sm">
+<a class="font-medium text-info hover:text-blue-600 flex items-center" href="#">
+                            Ver estado <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white overflow-hidden shadow rounded-lg border-l-4 border-success">
+<div class="p-5">
+<div class="flex items-center">
+<div class="flex-shrink-0">
+<div class="rounded-md bg-success/10 p-3">
+<span class="material-symbols-outlined text-success text-2xl">local_shipping</span>
+</div>
+</div>
+<div class="ml-5 w-0 flex-1">
+<dl>
+<dt class="text-sm font-medium text-gray-500 truncate">Listos para Entrega</dt>
+<dd>
+<div class="text-2xl font-bold text-gray-900">28</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 px-5 py-3">
+<div class="text-sm">
+<a class="font-medium text-success hover:text-green-600 flex items-center" href="#">
+                            Gestionar envíos <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white overflow-hidden shadow rounded-lg border-l-4 border-premium-brown">
+<div class="p-5">
+<div class="flex items-center">
+<div class="flex-shrink-0">
+<div class="rounded-md bg-premium-brown/10 p-3">
+<span class="material-symbols-outlined text-premium-brown text-2xl">receipt_long</span>
+</div>
+</div>
+<div class="ml-5 w-0 flex-1">
+<dl>
+<dt class="text-sm font-medium text-gray-500 truncate">Total Hoy</dt>
+<dd>
+<div class="text-2xl font-bold text-gray-900">85</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 px-5 py-3">
+<div class="text-sm">
+<span class="text-green-600 font-bold text-xs flex items-center">
+<span class="material-symbols-outlined text-xs mr-1">trending_up</span> +12% vs ayer
+                        </span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-white shadow rounded-lg">
+<div class="px-6 py-5 border-b border-gray-200 flex justify-between items-center">
+<h3 class="text-lg leading-6 font-medium text-gray-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bakery_dining</span>
+                        Resumen de Producción Diaria
+                    </h3>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                        En curso
+                    </span>
+</div>
+<div class="p-6">
+<div class="overflow-hidden">
+<ul class="divide-y divide-gray-200">
+<li class="py-4 flex justify-between items-center">
+<div class="flex items-center">
+<div class="h-10 w-10 rounded-full bg-orange-100 flex items-center justify-center text-primary font-bold text-sm">TT</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-gray-900">Turrón Tradicional (1kg)</p>
+<p class="text-xs text-gray-500">Lote #2023-A84</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-32 bg-gray-200 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
+</div>
+<div class="text-right">
+<span class="block text-sm font-bold text-gray-900">150 u</span>
+<span class="block text-xs text-gray-500">Objetivo: 200</span>
+</div>
+</div>
+</li>
+<li class="py-4 flex justify-between items-center">
+<div class="flex items-center">
+<div class="h-10 w-10 rounded-full bg-brown-100 flex items-center justify-center text-premium-brown bg-opacity-10 font-bold text-sm">FC</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-gray-900">Fusión de Cacao (500g)</p>
+<p class="text-xs text-gray-500">Lote #2023-B12</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-32 bg-gray-200 rounded-full h-2.5">
+<div class="bg-premium-brown h-2.5 rounded-full" style="width: 45%"></div>
+</div>
+<div class="text-right">
+<span class="block text-sm font-bold text-gray-900">45 u</span>
+<span class="block text-xs text-gray-500">Objetivo: 100</span>
+</div>
+</div>
+</li>
+<li class="py-4 flex justify-between items-center">
+<div class="flex items-center">
+<div class="h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-700 font-bold text-sm">CM</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-gray-900">Clásico de Miel (350g)</p>
+<p class="text-xs text-gray-500">Lote #2023-C05</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-32 bg-gray-200 rounded-full h-2.5">
+<div class="bg-yellow-500 h-2.5 rounded-full" style="width: 90%"></div>
+</div>
+<div class="text-right">
+<span class="block text-sm font-bold text-gray-900">270 u</span>
+<span class="block text-xs text-gray-500">Objetivo: 300</span>
+</div>
+</div>
+</li>
+<li class="py-4 flex justify-between items-center">
+<div class="flex items-center">
+<div class="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-sm">CI</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-gray-900">Colección Imperial</p>
+<p class="text-xs text-gray-500">Pedido Especial</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-32 bg-gray-200 rounded-full h-2.5">
+<div class="bg-purple-600 h-2.5 rounded-full" style="width: 100%"></div>
+</div>
+<div class="text-right">
+<span class="block text-sm font-bold text-gray-900">20 u</span>
+<span class="block text-xs text-gray-500">Completado</span>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="mt-4 border-t border-gray-100 pt-4">
+<a class="text-sm font-medium text-primary hover:text-primary-hover flex items-center justify-center" href="#">
+                            Ver reporte completo de producción <span class="material-symbols-outlined text-sm ml-1">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 bg-white shadow rounded-lg flex flex-col">
+<div class="px-6 py-5 border-b border-gray-200">
+<h3 class="text-lg leading-6 font-medium text-gray-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">store</span>
+                        Pedidos por Local
+                    </h3>
+</div>
+<div class="p-6 flex-1">
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">Tienda Principal (Lima)</span>
+<span class="text-sm font-bold text-gray-900">42</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-2">
+<div class="bg-premium-brown h-2 rounded-full" style="width: 70%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">Sucursal Miraflores</span>
+<span class="text-sm font-bold text-gray-900">28</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">Sucursal San Isidro</span>
+<span class="text-sm font-bold text-gray-900">18</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full opacity-70" style="width: 30%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium text-gray-700">Tienda Pueblo Libre</span>
+<span class="text-sm font-bold text-gray-900">12</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full opacity-50" style="width: 20%"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 bg-gray-50 rounded-lg p-4 border border-gray-100">
+<h4 class="text-sm font-bold text-gray-800 mb-2">Alerta de Stock</h4>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-500 text-xl">warning</span>
+<p class="text-xs text-gray-600">
+<strong>San Isidro</strong> reporta bajo stock en Turrón Tradicional (1kg). Se requiere reposición antes de las 5:00 PM.
+                            </p>
+</div>
+<button class="mt-3 w-full bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 text-xs font-bold py-1.5 px-3 rounded shadow-sm transition-colors">
+                            Generar Orden de Traslado
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 bg-white shadow rounded-lg overflow-hidden">
+<div class="px-6 py-5 border-b border-gray-200">
+<h3 class="text-lg leading-6 font-medium text-gray-900">Últimos Pedidos Ingresados</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="min-w-full divide-y divide-gray-200">
+<thead class="bg-gray-50">
+<tr>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">ID Pedido</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Cliente / Local</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Estado</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Total</th>
+<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" scope="col">Fecha</th>
+<th class="relative px-6 py-3" scope="col">
+<span class="sr-only">Acciones</span>
+</th>
+</tr>
+</thead>
+<tbody class="bg-white divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#ORD-5842</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Distribuidora Central</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                    Pendiente
+                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">S/. 1,250.00</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Hace 10 min</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<a class="text-primary hover:text-primary-hover" href="#">Editar</a>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#ORD-5841</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Tienda Miraflores</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                    En Producción
+                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">S/. 840.50</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Hace 45 min</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<a class="text-primary hover:text-primary-hover" href="#">Editar</a>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#ORD-5840</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Cliente Web: Juan P.</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    Listo
+                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">S/. 45.00</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Hace 1 hora</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<a class="text-primary hover:text-primary-hover" href="#">Editar</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-gray-50 px-6 py-3 border-t border-gray-200 flex items-center justify-between sm:px-6">
+<div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+<div>
+<p class="text-sm text-gray-700">
+                            Mostrando <span class="font-medium">1</span> a <span class="font-medium">3</span> de <span class="font-medium">85</span> resultados
+                        </p>
+</div>
+<div>
+<nav aria-label="Pagination" class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+<a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" href="#">
+<span class="sr-only">Anterior</span>
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</a>
+<a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" href="#">
+<span class="sr-only">Siguiente</span>
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple date script
+        const dateElement = document.getElementById('current-date');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = new Date().toLocaleDateString('es-ES', options);
+    </script>
+
+</body></html>
