@@ -455,6 +455,49 @@
         const dateElement = document.getElementById('current-date');
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         dateElement.textContent = new Date().toLocaleDateString('es-ES', options);
+
+        // --- LÓGICA DASHBOARD ---
+        function loadOrders() {
+            const orders = JSON.parse(localStorage.getItem('turrones-orders')) || [];
+            const tbody = document.querySelector('tbody');
+            const totalTodayEl = document.querySelector('.border-premium-brown .text-2xl'); // Card Total Hoy
+            
+            if(orders.length > 0 && tbody) {
+                tbody.innerHTML = ''; // Limpiar tabla demo
+                
+                // Renderizar órdenes reales
+                orders.forEach(order => {
+                    const date = new Date(order.date);
+                    const timeStr = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    
+                    const html = `
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${order.id}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${order.customer}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                ${order.status}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${order.total}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${timeStr}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                            <a href="#" class="text-primary hover:text-primary-hover">Ver</a>
+                        </td>
+                    </tr>`;
+                    tbody.insertAdjacentHTML('beforeend', html);
+                });
+
+                // Actualizar contador Total Hoy
+                if(totalTodayEl) {
+                    // Sumar hardcoded (85) + nuevos
+                    totalTodayEl.textContent = 85 + orders.length;
+                }
+            }
+        }
+
+        // Cargar al inicio
+        loadOrders();
     </script>
 
 </body></html>

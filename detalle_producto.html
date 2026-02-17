@@ -59,10 +59,11 @@
         </a>
 </div>
 <div class="hidden md:flex space-x-8 lg:space-x-12 font-medium text-sm lg:text-base tracking-wide font-sans">
-<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Inicio</a>
-<a class="text-primary border-b-2 border-primary pb-1" href="#">Productos</a>
-<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Para Empresas</a>
-<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Tiendas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="./index.html">Inicio</a>
+<a class="text-primary border-b-2 border-primary pb-1" href="./producto.html">Productos</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="./empresa.html">Para Empresas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="./tiendas.html">Tiendas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="./contacto.html">Contacto</a>
 </div>
 <div class="flex items-center space-x-6">
 <button aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors focus:outline-none" id="theme-toggle">
@@ -416,10 +417,11 @@
 <div>
 <h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Enlaces Rápidos</h4>
 <ul class="space-y-4">
-<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Inicio</a></li>
-<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Productos</a></li>
-<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Para Empresas</a></li>
-<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Tiendas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./index.html">Inicio</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./producto.html">Productos</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./empresa.html">Para Empresas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./tiendas.html">Tiendas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./contacto.html">Contacto</a></li>
 </ul>
 </div>
 <div>
@@ -476,5 +478,47 @@
             themeIcon.textContent = 'dark_mode';
         }
     });
+</script>
+<script>
+    // --- LÓGICA DETALLE PRODUCTO ---
+    const CURRENT_PRODUCT = { id: 1, name: "Clásico de Miel", price: 24.90, weight: "500g", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEjXAtVgM45r2H6n9lSJ3lD3gCu-Ih3FibAmarMAyQFc9_QF-MjqSG9gs8jXotpI5iFY2WJ7HTvQjidAcvSkfHf6tQ6XHSBbkHwoVe0EOOQXitsW9FxhJ68hqKGc_PYLGln-CyadceuljCq5qNFsFrwUdLYla_OTaP6dwRwp9bK5HR7BXLEILKavlsm-npMQbeHxYDrTLyBtDpjkBBhldqKRkgbrLiw5gbILv_IOlxjIyCi_VKBoZoRZPA-IQ1iezUgujA_2qlcdmJ" };
+
+    function getCart() { return JSON.parse(localStorage.getItem('turrones-cart')) || []; }
+    function saveCart(cart) { localStorage.setItem('turrones-cart', JSON.stringify(cart)); updateCartCount(); }
+    
+    function updateCartCount() {
+        const cart = getCart();
+        const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+        const badge = document.querySelector('span.material-symbols-outlined + span.absolute');
+        if (badge) badge.textContent = totalItems;
+    }
+
+    // Lógica de Cantidad
+    const qtyInput = document.querySelector('input[type="number"]');
+    const btnMinus = qtyInput.previousElementSibling;
+    const btnPlus = qtyInput.nextElementSibling;
+    const btnAdd = document.querySelector('button:has(.material-symbols-outlined)'); // Botón Añadir
+
+    btnMinus.onclick = () => { if(qtyInput.value > 1) qtyInput.value--; };
+    btnPlus.onclick = () => { qtyInput.value++; };
+
+    // Lógica Añadir
+    // El botón "Añadir al carrito" es el que tiene el icono shopping_bag
+    const addToCartBtn = Array.from(document.querySelectorAll('button')).find(b => b.textContent.includes('Añadir al carrito'));
+    
+    if(addToCartBtn) {
+        addToCartBtn.onclick = () => {
+            let cart = getCart();
+            const qty = parseInt(qtyInput.value);
+            const existingItem = cart.find(item => item.id === CURRENT_PRODUCT.id);
+            if (existingItem) { existingItem.qty += qty; } 
+            else { cart.push({ ...CURRENT_PRODUCT, qty: qty }); }
+            saveCart(cart);
+            alert(`Se añadieron ${qty} unidades al carrito.`);
+        };
+    }
+
+    updateCartCount();
+    document.querySelector('a[href="#"]:has(.material-symbols-outlined)').href = './checkout.html';
 </script>
 </body></html>

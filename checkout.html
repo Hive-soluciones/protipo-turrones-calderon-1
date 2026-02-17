@@ -56,10 +56,11 @@
         </a>
 </div>
 <div class="hidden md:flex space-x-8 lg:space-x-12 font-medium text-sm lg:text-base tracking-wide font-sans">
-<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Inicio</a>
-<a class="text-primary border-b-2 border-primary pb-1" href="#">Productos</a>
-<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Para Empresas</a>
-<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="#">Tiendas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="./index.html">Inicio</a>
+<a class="text-primary border-b-2 border-primary pb-1" href="./producto.html">Productos</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="./empresa.html">Para Empresas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="./tiendas.html">Tiendas</a>
+<a class="hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary pb-1" href="./contacto.html">Contacto</a>
 </div>
 <div class="flex items-center space-x-6">
 <button aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors focus:outline-none" id="theme-toggle">
@@ -241,10 +242,11 @@
 <div>
 <h4 class="text-lg font-bold mb-6 tracking-wide uppercase">Enlaces Rápidos</h4>
 <ul class="space-y-4">
-<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Inicio</a></li>
-<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Productos</a></li>
-<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Para Empresas</a></li>
-<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="#">Tiendas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./index.html">Inicio</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./producto.html">Productos</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./empresa.html">Para Empresas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./tiendas.html">Tiendas</a></li>
+<li><a class="text-white hover:text-primary transition-colors text-sm font-normal" href="./contacto.html">Contacto</a></li>
 </ul>
 </div>
 <div>
@@ -302,5 +304,82 @@
             themeIcon.textContent = 'dark_mode';
         }
     });
+</script>
+<script>
+    // --- LÓGICA CHECKOUT ---
+    function getCart() { return JSON.parse(localStorage.getItem('turrones-cart')) || []; }
+    
+    function renderCheckout() {
+        const cart = getCart();
+        const container = document.querySelector('.space-y-6.mb-8.max-h-\\[300px\\]');
+        const subtotalEl = document.querySelectorAll('.border-t span')[1]; // Subtotal value span
+        const shippingEl = document.querySelectorAll('.border-t span')[3]; // Shipping value span
+        const totalEl = document.querySelector('.text-primary.leading-none'); // Total value span
+        
+        if(!container) return;
+        container.innerHTML = '';
+
+        let subtotal = 0;
+        
+        cart.forEach(item => {
+            subtotal += item.price * item.qty;
+            const html = `
+            <div class="flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-50">
+                    <img src="${item.img}" class="w-full h-full object-cover" alt="${item.name}">
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-semibold text-sm text-gray-900 dark:text-white">${item.name}</h4>
+                    <p class="text-xs text-gray-500">${item.weight || 'Unidad'}</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-xs text-gray-500 mb-1">x ${item.qty}</p>
+                    <p class="font-bold text-sm text-gray-900 dark:text-white">$${(item.price * item.qty).toFixed(2)}</p>
+                </div>
+            </div>`;
+            container.insertAdjacentHTML('beforeend', html);
+        });
+
+        const shipping = subtotal > 0 ? 5.00 : 0;
+        const total = subtotal + shipping;
+
+        // Actualizar textos (buscando por posición relativa ya que no hay IDs)
+        const summaryRows = document.querySelectorAll('.border-t .flex.justify-between');
+        if(summaryRows.length >= 2) {
+            summaryRows[0].children[1].textContent = `$${subtotal.toFixed(2)}`;
+            summaryRows[1].children[1].textContent = `$${shipping.toFixed(2)}`;
+        }
+        if(totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Finalizar Compra
+    const finishBtn = document.querySelector('button.w-full.bg-primary');
+    if(finishBtn) {
+        finishBtn.onclick = (e) => {
+            e.preventDefault();
+            const cart = getCart();
+            if(cart.length === 0) { alert('El carrito está vacío'); return; }
+
+            // Crear Orden
+            const orders = JSON.parse(localStorage.getItem('turrones-orders')) || [];
+            const newOrder = {
+                id: `#ORD-${Math.floor(1000 + Math.random() * 9000)}`,
+                customer: document.getElementById('firstname')?.value || 'Cliente Web',
+                total: document.querySelector('.text-primary.leading-none')?.textContent || '$0.00',
+                status: 'Pendiente',
+                date: new Date().toISOString(),
+                items: cart
+            };
+            orders.unshift(newOrder); // Agregar al inicio
+            localStorage.setItem('turrones-orders', JSON.stringify(orders));
+            
+            // Limpiar carrito
+            localStorage.removeItem('turrones-cart');
+            alert('¡Pedido realizado con éxito! Gracias por su compra.');
+            window.location.href = './index.html';
+        };
+    }
+
+    renderCheckout();
 </script>
 </body></html>
